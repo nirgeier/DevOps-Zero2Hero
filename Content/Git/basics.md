@@ -86,25 +86,4 @@ A repository (repo) is a storage location where all the files, history, and vers
     `git log`
     
 
-6. Pushing Changes
 
-    `git push origin main`
-
-    Once you've committed your changes locally, you can push them to a remote repository so others can see and collaborate.
-
-
-## Fetching From an Upstream Repository:
-
-1. When you're working on a fork or a project with multiple remotes, you may need to fetch changes from an upstream repo.
-    First, add the upstream repo (only needed once):
-
-    `git remote add upstream <upstream-repo-url>`
-    (example: git remote add upstream https://github.com/nirgeier/DevOps-Zero2Hero.git)
-
-2. Then, fetch changes from upstream:
-
-    `git fetch upstream`
-
-3. To update your local branch with upstream changes:
-
-    `git merge upstream/main`

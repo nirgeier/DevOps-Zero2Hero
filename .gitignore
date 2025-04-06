@@ -1,13 +1,12 @@
 # This is a simple .gitignore file with a basic structure.
 
 # Ignore specific files or directories
-*.idea/       # This folder is created by JetBrains IDEs like PyCharm
-__pycache__/ # This is the folder where Python stores the compiled .pyc files
-*.vscode/     # This folder contains VSCode-specific settings, extensions
+.idea/
+__pycache__/
+*.vscode/
 
 # Exclude (unignore) a file or folder previously ignored
 # Use '!' at the beginning of the line.
-
 # example:
 # !important_file.txt
 # !keep_this_folder/

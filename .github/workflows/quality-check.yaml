@@ -49,7 +49,7 @@ jobs:
       #––– Actionlint (GitHub workflow linter) –––––––––––––––––
       - name: Actionlint
         if: ${{ hashFiles('.github/workflows/*.yml', '.github/workflows/*.yaml') != '' }}
-        uses: rhysd/actionlint@v1
+        uses: rhysd/actionlint@v1.6.26
         with:
           shell: bash
 

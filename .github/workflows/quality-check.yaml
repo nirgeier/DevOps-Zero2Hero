@@ -44,7 +44,7 @@ jobs:
       #––– Yamllint ––––––––––––––––––––––––––––––––––––––––––––
       - name: Yamllint
         if: ${{ hashFiles('**/*.yml', '**/*.yaml') != '' }}
-        uses: ibiqlik/action-yamllint@v3
+        uses: ibiqlik/action-yamllint@v3.1.1
 
       #––– Actionlint (GitHub workflow linter) –––––––––––––––––
       - name: Actionlint
@@ -63,4 +63,4 @@ jobs:
       #––– ShellCheck ––––––––––––––––––––––––––––––––––––––––––
       - name: ShellCheck
         if: ${{ hashFiles('**/*.sh') != '' }}
-        uses: ludeeus/action-shellcheck@v2
+        uses: ludeeus/action-shellcheck@v2.0.0

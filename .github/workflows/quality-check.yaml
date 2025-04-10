@@ -1,4 +1,4 @@
-name: DevOps Quality Checks
+name: DevOps Quality Check
 
 on:
   push:

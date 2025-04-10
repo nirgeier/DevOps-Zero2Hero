@@ -63,4 +63,4 @@ jobs:
       #––– ShellCheck ––––––––––––––––––––––––––––––––––––––––––
       - name: ShellCheck
         if: ${{ hashFiles('**/*.sh') != '' }}
-        uses: ludeeus/action-shellcheck@v1.1.0
+        uses: ludeeus/action-shellcheck@1.1.0

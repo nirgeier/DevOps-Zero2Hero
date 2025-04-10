@@ -70,7 +70,8 @@ jobs:
           if [ -n "$FILES" ]; then
             echo "Running yamllint on:"
             echo "$FILES"
-            yamllint $FILES
+            yamllint -c .yamllint.yml $FILES
+
           else
             echo "No YAML files changed."
           fi

@@ -1,0 +1,45 @@
+name: Build Content List
+
+on:
+  # Trigger action on pull request closed
+  push:
+    # List of branches to work on
+    branches:
+      - "main"
+
+env:
+  GIT_USER_EMAIL:     "nirgeier@gmail.com"
+  GIT_USER_NAME:      "Nir Geier"
+  PR_AUTHOR:          "nirgeier"
+
+jobs:
+  build-content-list:
+
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+        with:
+          # Full git history needed to get proper commit info
+          fetch-depth: 0
+          persist-credentials: true
+          token: ${{ secrets.ACTION_TOKEN }}
+        
+      - name: Make script executable
+        run: chmod +x resources/scripts/*.sh
+            
+      - name: Run the bash script
+        run: ./resources/scripts/build-content-list.sh
+        
+      - name: Commit and push changes
+        run: |
+          git config --local user.email ${{ env.GIT_USER_EMAIL }}
+          git config --local user.name ${{ env.GIT_USER_NAME }}
+          git add .
+          git commit -m "Automatically added Content list by GitHub Action after PR merge"
+          git push

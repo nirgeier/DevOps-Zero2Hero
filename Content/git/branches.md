@@ -78,3 +78,21 @@ For these things **not to happen**, Git provides an easy way of stashing uncommi
 - `git stash apply`  - Applies whatever is stashed away, without  removing it from the stash. This can be useful if you want to apply stashed changes to multiple branches.
 - `git stash list` - You can add multiple stashes onto the stack of stashes. They will be stashed in the order you added them. So this command will list all of the stashes you added by order of stashing.
 - `git stash apply stash@{the stash number}` - You can specify a particular stash that you want to apply.
+
+---
+### Reflog
+
+Git keeps a record of when the tips of branches and other references were updated in the repo. We can view and update these references logs using the git reflog command.
+
+Basically it’s a safety net for recovering lost commits or branches, that helps you undo actions like resets, or recovering work after a merge or rebase that went wrong.
+
+
+- `git reflog show [branch-name or HEAD]` - Shows the logs of a specific reference.
+    
+- `[branch-name or HEAD]@{n}` - We can use this syntax to access specific ref pointers and can pass them to other commands including checkout, reset, diff and merge.
+
+- `[branch-name or HEAD]@{timestamp}` - Same as the above but with a timestamp. A time stamp can look like: `[{yesterday} {1.day.ago} {3.minutes.ago} {1.week.ago}] etc.`
+
+**Limitations:**
+  - Git only keeps reflogs on your local activity . They are not shared with collaborators.
+  - Reflogs expire, git cleans out old entries after around 90 days (this can be configured)

@@ -65,6 +65,21 @@ docker run -d -p 8080:80 my-nginx
 ```
 Now visit [http://localhost:8080](http://localhost:8080) in your browser — you should see the default NGINX welcome page.
 ---
+### Debug container issue
+```bash
+docker ps
+```
+
+🛑 Entry to docker container by name or by id
+```bash
+docker exec -it <container_name_or_id> /bin/bash
+```
+
+🛑 Checking logs from container 
+```bash
+docker logs <container_name_or_id>
+```
+
 
 ### Stop the Container
 

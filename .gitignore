@@ -5,9 +5,3 @@
 __pycache__/
 .vscode/
 
-# Exclude (unignore) a file or folder previously ignored
-# Use '!' at the beginning of the line.
-
-# example:
-# !important_file.txt
-# !keep_this_folder/

@@ -1,12 +1,10 @@
 # Maintainers of the project
 
-
-  <img src="https://img.shields.io/github/forks/nirgeier/DevOps-Zero2Hero?style=social">
-  <img src="https://img.shields.io/github/stars/nirgeier/DevOps-Zero2Hero?style=social">
+  <img src="https://img.shields.io/github/forks/nirgeier/DevOps-Zero2Hero?style=social">&nbsp;<img src="https://img.shields.io/github/stars/nirgeier/DevOps-Zero2Hero?style=social">
 
 ---
 
-![](resources/images/cover.png)
+![](resources/images/cover-rounded.png)
 
 ---
 
@@ -30,6 +28,18 @@ If you appreciate the effort, Please <img src="https://raw.githubusercontent.com
 </div>
 
 ---
+- [@nirgeier](https://github.com/nirgeier)
+
 - [@danirdd92](https://github.com/danirdd92)
 - [@guy-hemo](https://github.com/guy-hemo)
-
+- [@DanielRaphael](https://github.com/DanielRaphael1)
+- [@RanMarkovich](https://github.com/RanMarkovich)
+- [@gilenz](https://github.com/gilenz)
+- [@Lielik](https://github.com/Lielik)
+- [@daniael12](https://github.com/daniael12)
+- [@itsik-weiss](https://github.com/itsik-weiss)
+- [@yuvalbenar](https://github.com/yuvalbenar)
+- [@yoyobesser](https://github.com/yoyobesser)
+- [@Chadadinio](https://github.com/Chadadinio)
+- [@itayshlanger](https://github.com/itayshlanger)
+- [@eilaytal](https://github.com/eilaytal)

@@ -13,11 +13,20 @@
 ---
 
 <!-- omit in toc -->
-### Table of Contents 
+## Table of Contents
 
-- [How to contribute to this project?](#how-to-contribute-to-this-project)
-  - [Detailed instructions how to contribute](#detailed-instructions-how-to-contribute)
-
+- [Detailed instructions how to contribute](#detailed-instructions-how-to-contribute)
+  - [Getting Started](#getting-started)
+    - [Fork the Repository](#fork-the-repository)
+    - [Making Changes](#making-changes)
+      - [Generating ssh key](#generating-ssh-key)
+      - [Setting up upstream](#setting-up-upstream)
+      - [Stay Updated](#stay-updated)
+      - [Commit changes](#commit-changes)
+- [Contributing notes](#contributing-notes)
+- [Contributing Quality](#contributing-quality)
+  - [Run GithubAction locally](#run-githubaction-locally)
+- [Recommended extensions for improved contribution](#recommended-extensions-for-improved-contribution)
 
 ---
 
@@ -35,44 +44,84 @@
 
 ---
 
-#### Detailed instructions how to contribute
+## Detailed instructions how to contribute
 
-- Click on the `Fork` and fork this project to your GitHub account.  
-  https://github.com/nirgeier/DevOps-Zero2Hero/fork
-- Clone the forked repository to your local machine.
-  ```sh
-  $ git clone git@github.com:<your-account-username>/DevOps-Zero2Hero.git
+### Getting Started
+  
+#### Fork the Repository
+
+- Start by forking the repository to your own GitHub account:
+- Click the "Fork" button in the upper right corner
+- Clone your fork locally:
+  ```bash
+  # Clone the repository
+  $ git clone https://github.com/YOUR-USERNAME/DevOps-Zero2Hero.git
+  
+  # Navigate into the project directory
+  $ cd DevOps-Zero2Hero-NAME
   ```
-- Create branch for your changes.
+
+#### Making Changes
+
+##### Generating ssh key
+
+  - Make sure you have a setup an SSH key for GitHub. 
+  - If you don't have one, follow these steps to generate and add your SSH key to GitHub.
+    - Generate an SSH key:
+      ```bash
+      # Generate rsa key
+      ssh-keygen -t rsa 
+
+      # Follow the prompt to save the key to a file (e.g., `~/.ssh/id_rsa`)
+      # You can also specify a different file name by using `-f` option, e.g: 
+      # ssh-keygen -t rsa -f ~/.ssh/mykey
+      ```
+    - This will create a new file named `id_rsa` and `id_rsa.pub` in your home directory unless you gave it a different name
+  - Copy the contents of `id_rsa.pub` and paste it under "SSH key" field in  your GitHub account settings.
+
+##### Setting up upstream
+  
+- Add the original repository as an upstream remote:
+  ```bash
+  # Add the original repository as an upstream remote
+  git remote add upstream git@github.com:nirgeier/DevOps-Zero2Hero.git
+  ```
+
+##### Stay Updated
+
+- Keep your fork in sync with the upstream repository:
+  ```bash
+  # Keep your fork in sync with the upstream repository
+  git fetch --all
+
+  # Merge upstream changes into your branch
+  git merge upstream/main
+  ```
+
+##### Commit changes
+
   ```sh
+  # Create branch for your changes.
   $ git checkout -b <your-branch-name>
-  ```
-- Make changes locally on your local machine (clone).
-- Add the changes to your staging area
-  ```sh
+
+  # Make changes locally on your local machine (clone).
+  # Add the changes to your staging area
   $ git add .
-  ```
-- Commit the changes
-  ```sh 
+
+  # Commit the changes
   $ git commit -m "Describe your changes here"
-  ```
-- Push the changes to your forked repository.
-  ```sh
+
+  # Push the changes to your forked repository.
   $ git push origin <your-branch-name>
   ```
+  
 - Create a pull request to the main repository.
 
 ---
 
-### Contributing guidelines
-
-1. Fork, clone and have your local copy.
-2. Open PR once you ready to push back to main
-3. Github action will auto-check if your code is qualifies to be merged back and if not you will be asked to fix it.
-
 ## Contributing notes
 
-1. Top folders (topics) should start with Capital letter
+1. All folders should be named in lowercase with no spaces.  
 2. Content should be written in markdown and file name should be `.md`
 3. Content should b based upon the Default template with the required placeholders and include TOC
 4. GitHub action is collecting all the files and generate auto-content README file with the different topics.
@@ -81,6 +130,15 @@
 
 ## Contributing Quality
 
+### Run GithubAction locally
+
+1. Install `act` from the official website to run GithubAction locally   
+   Click <kbd>CTRL</kbd> to open in hew tab: https://nektosact.com/installation/index.html
+2. Execute the following command in your terminal:
+   ```sh
+   # Execute the Github Actions locally
+   act --workflows \
+   ".github/workflows/add-contrib.yml" --job "add-contributor" 
 - TODO: Add detailed page on how to run and text GitHub actions locally
 - Verify that your code is passing all the pre-merge checks
 
@@ -89,16 +147,10 @@
 
 - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
 - [GitHub Actions](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-github-actions)
-- 
 
 ---
 
 - Use the [discussions](https://github.com/nirgeier/DevOps-Zero2Hero/discussions) tab to discuss the project.
-
----
-
-<!-- LOGOS START -->
-<!-- LOGOS END -->
 
 ---
 

@@ -1,1 +1,7 @@
+# This is a simple .gitignore file with a basic structure.
+
+# Ignore specific files or directories
+.idea/
+__pycache__/
+.vscode/
 .history

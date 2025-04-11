@@ -9,4 +9,4 @@ main (or master) – Always deployable.
 feature-branches – Named after the feature or fix you're working on, like fix-login-bug or add-dark-mode.
 
 
-![github_flow diagram](githubflow.png)
+![github_flow diagram](resources/githubflow.png)

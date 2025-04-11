@@ -8,7 +8,7 @@ This directory contains explanations and examples of **three popular Git branchi
    - A simple, lightweight workflow ideal for continuous delivery.
    - Best suited for web apps and SaaS projects with frequent deployments.
 
-2. **GitLab Flow**
+2. **Git Flow**
    - Combines feature-driven development with environment-based deployment models.
    - A more flexible model that supports both CI/CD and release management.
 
@@ -18,15 +18,12 @@ This directory contains explanations and examples of **three popular Git branchi
 
 ## How to Use This Directory
 
-Each subfolder (`github-flow/`, `gitlab-flow/`, `trunk-based/`) contains:
-- A markdown explanation of the strategy.
-- Git command examples.
-- Diagrams (if applicable) to visualize the flow.
 
 This collection is perfect for:
 - Learning about Git workflows.
 - Comparing strategies for team adoption.
 - Onboarding new developers to your preferred branching model.
+- decide which strategy will work the best in our project
 
 ---
 

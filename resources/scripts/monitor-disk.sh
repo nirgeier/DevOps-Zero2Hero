@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# ###
+# ### This script will check the disk usage in root filesystem.
+# ### @Author: Elad Chadad
+# ### 
+
 # Set threshold
 THRESHOLD=85
 

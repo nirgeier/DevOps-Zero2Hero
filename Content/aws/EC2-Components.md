@@ -28,11 +28,11 @@ and what kind of traffic is allowed in or out.
 You assign one or more security groups when you launch an instance, and you can modify them anytime.
 
 ### Important Things to Know:
-- 'Stateful:' If you allow inbound traffic on a port, response traffic is automatically allowed out.
+- `Stateful:` If you allow inbound traffic on a port, response traffic is automatically allowed out.
 
-- 'No Deny Rules:' You can only allow traffic, not explicitly block it.
+- `No Deny Rules:` You can only allow traffic, not explicitly block it.
 
-- 'Multiple Groups:' You can attach multiple security groups to an instance — the rules are additive.
+- `Multiple Groups:` You can attach multiple security groups to an instance — the rules are additive.
 
 # 🗺️ 5. Key Pairs:
 

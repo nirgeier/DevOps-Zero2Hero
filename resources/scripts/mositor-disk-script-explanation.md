@@ -7,7 +7,7 @@ USAGE=$(df / | awk 'NR==2 {gsub("%",""); print $5}') - put the number we got fro
 in a variable named USAGE.
 
 if [ "$USAGE" -gt "$THRESHOLD" ] - if we got that the USAGE number is greater than("gt") the THRESHOLD 
-number so echo the date and the warning to a logfile.
+number so 'echo' the date and the warning to a logfile.
 
 i hope it was understandable.
 

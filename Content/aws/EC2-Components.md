@@ -35,13 +35,30 @@ You assign one or more security groups when you launch an instance, and you can 
 - `Multiple Groups:` You can attach multiple security groups to an instance — the rules are additive.
 
 # 🗺️ 5. Key Pairs:
+A Key Pair is used to securely access your EC2 instance. It's a combination of:
+
+Public key – Stored by AWS and embedded into your instance.
+
+Private key – Downloaded by you, and kept safe on your machine.
+
+Together, they enable SSH(Secure shell) access to Linux instances or RDP(Remote desktop) access to Windows instances without using passwords.
+
+### 🔒 Important Notes:
+You only get one chance to download the .pem file(the private key) — **store it safely!**
+
+Do not share your private key. Anyone with it can access your instance.
 
 # 🧱 6. Elastic Block Store (EBS):
+Amazon EBS is block-level storage that you can attach to EC2 instances, just like a virtual hard drive. It’s designed for persistent, high-performance storage — great for things like OS boot volumes, databases, app data, and logs.
+
+### 🛠️ How EBS Works with EC2:
+Every EC2 instance has at least one EBS volume (the root volume).
+You can add additional volumes (e.g., a separate volume just for data).
+If you stop and restart your instance, the EBS volumes stay attached.
+If you terminate the instance, the volume is deleted only if "delete on termination" is enabled.
+
+- EBS snapshots are **incremental** backups of your volume.
 
 # 📶 7. Elastic IPs:
-
-# 📈 8. Auto Scaling:
-
-
-
-
+An Elastic IP is a static, public IPv4 address that you can associate with your EC2 instance. 
+Unlike regular public IPs, Elastic IPs don’t change when you stop or restart your instance — making them perfect for situations where a consistent IP address is needed (e.g., DNS records, whitelisted services, APIs, etc.).

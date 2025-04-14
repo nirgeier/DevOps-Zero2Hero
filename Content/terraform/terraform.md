@@ -67,7 +67,7 @@ resource "aws_security_group" "example" {
   }
 }
 ```
-- Provider: The provider block contains the information necessary for Terraform to connect to your cloud provider (region, access key, secret key, etc.) and manage resources there. You can also define where to store the Terraform state (e.g., S3 with DynamoDB for state locking).
+- Provider: The provider block contains the information necessary for Terraform to connect to your cloud provider (region, access key, secret key, etc.) and manage resources there. 
 Example of provider configuration:
 ```
 provider "aws" {
@@ -76,19 +76,17 @@ provider "aws" {
   secret_key = "my-secret-key"
 }
 ```
-To use S3 with dynamodb lock for state file please create a dynamodb table with a name of the table and partition key with the value "LockID"
-Notice - variables are not allowed to use on the following usage everything should be in clear text
-Example of using S3 to store the state file and lock it when applying changes using dynamodb table
+- Terraform block: you can use the `terraform` block to configure Terraform's behaviour. It is commonly used to define a required Terraform version, or an alternative backend ( [Read more about Terraform backends here](/Content/Terraform/terraform-remote-state.md) ).
 ```
 terraform {
-  backend "s3" {
-    bucket = "mybucket"
-    key    = "path/to/my/keyname.tfstate"
-    region = "us-east-1"
-    dynamodb_table = "dynamo-db-table-name"
+  required_verson = ">= major.minor.patch"
+  backend "<type>" {
+    ......
   }
 }
 ```
+
+
 - Resource: A resource is a component managed by Terraform. Resources can be created separately or as part of a module.
 Example of resource usage:
 ```

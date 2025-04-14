@@ -18,13 +18,21 @@ jobs:
   add-contributor:
 
     # Only run this job when a PR is merged (not just closed)
-    #if: github.event.pull_request.merged == true
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
     permissions:
       contents: write
 
     steps:
+      - name: Debug
+        run: |
+          if [ -n "${{ secrets.GITHUB_TOKEN }}" ]; then
+            echo "ACTION_TOKEN is set"
+          else
+            echo "ACTION_TOKEN is not set"
+          fi
+
       - name: Checkout code
         uses: actions/checkout@v4
         
@@ -32,7 +40,7 @@ jobs:
           # Full git history needed to get proper commit info
           fetch-depth: 0
           persist-credentials: true
-          token: ${{ secrets.ACTION_TOKEN }}
+          token: "${{ secrets.GITHUB_TOKEN }}"
         
       - name: Add contributor if not exists
         id: check_contributor

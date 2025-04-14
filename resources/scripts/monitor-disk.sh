@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ###
-# ### This script will check the disk usage in root filesystem.
+# ### This script will check the disk usage of the root partition.
 # ### @Author: Elad Chadad
 # ### 
 

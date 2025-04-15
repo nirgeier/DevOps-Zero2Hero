@@ -127,12 +127,13 @@
 
 ## Contributing notes
 
-1. All folders should be named in lowercase with no spaces.  
-2. Content should be written in markdown and file name should be `.md`
-3. Content should b based upon the Default template with the required placeholders and include TOC
-4. GitHub action is collecting all the files and generate auto-content README file with the different topics.
-5. Images should be in the resources/images folder
-6. If you add new technology you have to edit the main README as well and add the logo + add the technology to the list
+1. Use the Template.md as your base file for your content.
+2. All folders should be named in lowercase with no spaces.  
+3. Content should be written in markdown and file name should be `.md`
+4. Content should b based upon the Default template with the required placeholders and include TOC
+5. GitHub action is collecting all the files and generate auto-content README file with the different topics.
+6. Images should be in the resources/images folder
+7. If you add new technology you have to edit the main README as well and add the logo + add the technology to the list
 
 ## Contributing Quality
 

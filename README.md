@@ -11,13 +11,29 @@ The goal is to demonstrate how DevOps engineers in the near future could leverag
 
 ---
 
+
 ## What is MCP?
 Model Context Protocol (MCP) by Anthropic is an open protocol that standardizes how AI applications can connect to tools and data sources. It lets large language models understand available tools, access them securely, and decide how to use them without being hardcoded for each case. MCP simplifies complex operations into high-level intents.
 
 ## What is A2A?
 A2A (Agent2Agent Protocol) is a new open protocol introduced by Google just days ago. It enables AI agents to discover each other, communicate, and collaborate across different systems—even if the agents were built by different vendors. A2A empowers developers to build ecosystems of agents that can coordinate tasks together, creating smart, dynamic workflows.
 
----
+<!-- omit in toc -->
+## Table of Contents
+
+- [Detailed instructions how to contribute](#detailed-instructions-how-to-contribute)
+  - [Getting Started](#getting-started)
+    - [Fork the Repository](#fork-the-repository)
+    - [Making Changes](#making-changes)
+      - [Generating ssh key](#generating-ssh-key)
+      - [Setting up upstream](#setting-up-upstream)
+      - [Stay Updated](#stay-updated)
+      - [Commit changes](#commit-changes)
+- [Contributing notes](#contributing-notes)
+- [Contributing Quality](#contributing-quality)
+  - [Run GithubAction locally](#run-githubaction-locally)
+- [Recommended extensions for improved contribution](#recommended-extensions-for-improved-contribution)
+
 
 ## Real-Life Example of What MCP Is:
 Think of it as a kitchen tool that connects all your equipment. Instead of pulling out different devices and connecting them every time you need to cook, you have one system that connects everything and simplifies the work for you. The MCP agent works in a similar way—it connects data sources, making tasks like setting up servers faster and easier, without having to manually integrate each one separately.

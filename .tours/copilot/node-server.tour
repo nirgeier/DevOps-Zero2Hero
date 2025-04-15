@@ -1,0 +1,18 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "DevOps-Zero2Hero GitHub Copilot CodeStyle Tour",
+  "steps": [
+    {
+      "file": "Content/github-copilot/examples/example-0301.js",
+      "description": "Press Next to continue 👇! ",
+      "line": 5,
+      "contents": ""
+    },
+    {
+      "file": "Content/github-copilot/examples/example-0302.js",
+      "description": "- In this example, we will be using GitHub Copilot to convert comments into code.\n\n- Use `CTRL`+'ENTER' to generate the code or move on to the next section\n\nPress Next to continue 👇! ",
+      "line": 0,
+      "contents": ""
+    }
+  ]
+}

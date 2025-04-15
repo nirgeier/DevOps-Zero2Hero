@@ -4,6 +4,8 @@
 - The aim of this project is to collect as many resources as possible that users can use to DevOps.
 - The project will contain DevOps Learning labs.
 
+  [![Fork on GitHub](https://img.shields.io/github/forks/nirgeier/DevOps-Zero2Hero?label=Fork&style=for-the-badge&logo=github)](https://github.com/nirgeier/DevOps-Zero2Hero/fork)
+
 ---
 
 <div align="center">
@@ -57,7 +59,9 @@
 #### Fork the Repository
 
 - Start by forking the repository to your own GitHub account:
-- Click the "Fork" button in the upper right corner
+- Click the "Fork" button below  
+  [![Fork on GitHub](https://img.shields.io/github/forks/nirgeier/DevOps-Zero2Hero?label=Fork&style=for-the-badge&logo=github)](https://github.com/nirgeier/DevOps-Zero2Hero/fork)
+- This will create a copy of the repository in your own GitHub account.  
 - Clone your fork locally:
   ```bash
   # Clone the repository

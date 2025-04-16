@@ -112,17 +112,24 @@ Before you begin, make sure you have the following:
 ## A2A Protocol Overview
 **A2A is Google's open protocol that enables agents to communicate, exchange information, and collaborate on complex tasks—even across vendors.**
 
-### ✅ Advantages
-- Agents collaborate with each other
-- Enables complex multi-agent workflows
-- Can work with different tools simultaneously
-- Real-time scaling, monitoring, and customization
+### Advantages
+- Agents collaborate with each other  
+- Enables complex multi-agent workflows  
+- Can work with different tools simultaneously  
+- Real-time scaling, monitoring, and customization  
 
-### ⚠️ Disadvantages
-- Requires advanced initial setup
-- Still a very new (evolving) interface
+### Disadvantages
+- Requires advanced initial setup  
+- Still a very new (evolving) interface  
 
----
+### Contribution Guidelines
+1. Use the `Template.md` file as your base.
+2. All folder names should be written in lowercase with no spaces.
+3. Content should be written in Markdown format (`.md` files).
+4. Follow the structure in the default template and include a table of contents.
+5. GitHub Actions will generate the auto-content README using the different topics.
+6. Images should be placed inside the `resources/images` folder.
+7. When adding a new technology, remember to edit the main README, add the logo, and include the technology in the list.
 
 ## 🧪 Real-World DevOps A2A Example: Deployment & Cloud Maintenance
 Imagine you're a DevOps engineer managing apps across AWS, GCP, and internal systems.

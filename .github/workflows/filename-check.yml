@@ -1,0 +1,48 @@
+name: Filename Check
+
+on:
+  push:
+    paths:
+      - '**'
+  pull_request:
+    paths:
+      - '**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-filenames:
+    name: Check changed filenames
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Get changed filenames
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            git fetch origin ${{ github.base_ref }}
+            git diff --name-only origin/${{ github.base_ref }}...HEAD > changed.txt
+          else
+            git diff --name-only ${{ github.event.before }} ${{ github.sha }} > changed.txt
+          fi
+
+      - name: Check for invalid characters in changed filenames
+        run: |
+          echo "🔍 Checking for spaces or special characters in filenames..."
+
+          BAD_FILES=$(cat changed.txt | grep -E '[^a-zA-Z0-9._/-]' || true)
+
+          if [ -n "$BAD_FILES" ]; then
+            echo "❌ Invalid filenames detected:"
+            echo "$BAD_FILES"
+            echo "Please rename these files to remove spaces or special characters."
+            exit 1
+          else
+            echo "✅ All changed filenames are valid."
+          fi

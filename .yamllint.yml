@@ -24,10 +24,3 @@ rules:
 
   brackets:
     max-spaces-inside: -1  # allow spaces inside brackets
-
-  truthy:
-    allowed-values: ['yes', 'no', 'on', 'off', 'true', 'false']
-
-  indentation:
-    spaces: consistent
-    indent-sequences: consistent

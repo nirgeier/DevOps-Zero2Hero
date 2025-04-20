@@ -52,19 +52,9 @@ jobs:
 
 ## 🧠Diagram of the Workflow
 
-[Code Push to GitHub]
-
-         ↓
-
-[Trigger GitHub Action]
-
-         ↓
-
-[Run Jobs (Build, Test, Deploy)]
-
-         ↓
-
-[Success ✅ or Fail ❌]
+<div align="center">
+  <img src="resources/images/github-actions-workflow.png" alt="GitHub Actions Workflow Diagram" width="700">
+</div>
 
 ---
 

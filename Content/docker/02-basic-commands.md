@@ -30,12 +30,12 @@ In this section, we will introduce some of the most commonly used Docker command
 The `docker run` command is used to create and start a container from a specified image.
 
 ### Basic Syntax:
-- ```bash 
+```bash 
 docker run [OPTIONS] IMAGE [COMMAND] [ARG...] 
 ```
 
 #### Example:
-- ```bash 
+```bash 
 docker run hello-world 
 ```
 
@@ -55,7 +55,7 @@ docker run hello-world
 The `docker ps` command lists all the running containers.
 
 ### Basic Syntax:
-- ```bash 
+```bash 
 docker ps 
 ```
 
@@ -64,8 +64,8 @@ docker ps
 - d9b100f2f636   ubuntu:18.04    "bash"                   5 minutes ago  Up 4 minutes  0.0.0.0:8080->80/tcp   nice_boyd
 
 Use the `-a` flag to show all containers, including those that are stopped:
-- ```
-bash docker ps -a 
+```bash 
+docker ps -a 
 ```
 
 ---
@@ -76,15 +76,15 @@ bash docker ps -a
 - `docker rm`: Removes a container (useful after stopping a container).
 
 ### Example:
-- ```bash 
+```bash 
 docker stop <container_name_or_id> 
 ```
-- ```bash 
+```bash 
 docker rm <container_name_or_id> 
 ```
 
 You can combine both commands in one line to stop and remove a container:
-- ```bash 
+```bash 
 docker rm -f <container_name_or_id> 
 ```
 
@@ -95,7 +95,7 @@ docker rm -f <container_name_or_id>
 The `docker images` command lists all available images on your system.
 
 ### Basic Syntax:
-- ```bash 
+```bash 
 docker images 
 ```
 
@@ -110,13 +110,13 @@ docker images
 
 - `docker pull`: Downloads a Docker image from a registry (e.g., Docker Hub).
   
-  - ``bash 
+  ``bash 
   docker pull <image_name> 
   ```
 
 - `docker rmi`: Removes an image from your local system.
   
-  - ```bash 
+  ```bash 
   docker rmi <image_name_or_id> 
   ```
 
@@ -129,7 +129,7 @@ docker images
 - `docker exec`: Executes a command inside a running container.
 
   ### Example:
-  - ```bash 
+  ```bash 
   docker exec -it <container_name_or_id> bash 
   ```
 
@@ -138,7 +138,7 @@ docker images
 - `docker logs`: Fetches logs from a running container.
 
   ### Example:
-- ```bash 
+```bash 
 docker logs <container_name_or_id> 
 ```
 

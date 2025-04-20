@@ -58,6 +58,7 @@ The `docker ps` command lists all the running containers.
 ```bash 
 docker ps 
 ```
+#### Example Output:
 
 ```plaintext
 CONTAINER ID   IMAGE           COMMAND                  CREATED        STATUS       PORTS                  NAMES

@@ -60,8 +60,8 @@ docker ps
 ```
 
 #### Example Output:
-- CONTAINER ID   IMAGE           COMMAND                  CREATED        STATUS       PORTS                  NAMES
-- d9b100f2f636   ubuntu:18.04    "bash"                   5 minutes ago  Up 4 minutes  0.0.0.0:8080->80/tcp   nice_boyd
+ CONTAINER ID   IMAGE           COMMAND                  CREATED        STATUS       PORTS                  NAMES
+ d9b100f2f636   ubuntu:18.04    "bash"                   5 minutes ago  Up 4 minutes  0.0.0.0:8080->80/tcp   nice_boyd
 
 Use the `-a` flag to show all containers, including those that are stopped:
 ```bash 
@@ -100,9 +100,9 @@ docker images
 ```
 
 #### Example Output:
-- REPOSITORY          TAG       IMAGE ID       CREATED         SIZE
-- ubuntu              18.04     3b8a3e55e4f3   3 days ago      64.2MB
-- hello-world         latest    fce289e99eb9   4 months ago    1.84kB
+ REPOSITORY          TAG       IMAGE ID       CREATED         SIZE
+ ubuntu              18.04     3b8a3e55e4f3   3 days ago      64.2MB
+ hello-world         latest    fce289e99eb9   4 months ago    1.84kB
 
 ---
 

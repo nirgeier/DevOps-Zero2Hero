@@ -27,7 +27,7 @@ A **Dockerfile** is a script containing a series of instructions on how to build
 
 A Dockerfile consists of various instructions, each performing a specific task. Each instruction creates a new layer in the Docker image.
 
-> **Note:** Layers are cached by Docker, which can speed up subsequent builds if the layers remain unchanged. However, excessive or unnecessary layers can increase the image size, so it's important to write efficient Dockerfiles.
+> 💡**Note:** Layers are cached by Docker, which can speed up subsequent builds if the layers remain unchanged. However, excessive or unnecessary layers can increase the image size, so it's important to write efficient Dockerfiles.
 
 ### Common Instructions:
 - **FROM**: Specifies the base image to use.
@@ -42,10 +42,12 @@ A Dockerfile consists of various instructions, each performing a specific task. 
 ## 3. Basic Dockerfile Instructions
 
 ### FROM
+
 ```bash
-- The `FROM` instruction specifies the base image to use for the container. It is mandatory and must be the first instruction in a Dockerfile.
+FROM <image>
 ```
-- The `FROM` instruction specifies the base image to use for the container. It’s the first instruction in a Dockerfile.
+
+- The `FROM` instruction specifies the base image to use for the container. It is mandatory and must be the first instruction in a Dockerfile.
 
     ### Example:
     ```Dockerfile
@@ -79,8 +81,8 @@ COPY <source> <destination>
 ### CMD
 ```bash
 CMD ["executable", "param1", "param2"]
+```
 - The `CMD` instruction specifies the default command to run when the container is started. It can be overridden by arguments passed to the `docker run` command.
-- The `CMD` instruction specifies the default command to run when the container is started. It can be overridden when running the container.
 
     ### Example:
     ```Dockerfile

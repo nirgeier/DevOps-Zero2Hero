@@ -53,7 +53,7 @@ jobs:
 ## 🧠Diagram of the Workflow
 
 <div align="center">
-  <img src="resources/images/github-actions-workflow.png" alt="GitHub Actions Workflow Diagram" width="700">
+  <img src="../resources/images/github-actions-workflow.png" alt="GitHub Actions Workflow Diagram" width="700">
 </div>
 
 ---

@@ -1,11 +1,11 @@
 <!-- omit in toc -->
-# What is GitHub Actions?
+# ❓What is GitHub Actions?
 
 GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform that allows you to automate your build, test, and deployment pipeline.
 
 ---
 
-## 🛠️ Example of a simple CI/CD Workflow using GitHub Actions (Python)
+## 🛠️Example of a simple CI/CD Workflow using GitHub Actions (Python)
 
 This is a basic CI/CD pipeline using **GitHub Actions** for a Python project.  
 It runs automatically on every push to the `main` branch and includes the following steps:
@@ -50,27 +50,33 @@ jobs:
         run: echo "🚀 Deploying the Python app..."
 ```
 
-## Diagram of the Workflow
+## 🧠Diagram of the Workflow
 
 [Code Push to GitHub]
+
          ↓
+
 [Trigger GitHub Action]
+
          ↓
+
 [Run Jobs (Build, Test, Deploy)]
+
          ↓
+
 [Success ✅ or Fail ❌]
 
 ---
 
-## Tips for Beginners
+## 💡Tips for Beginners
 
 - Always test your workflow in a separate branch before merging.
-- Use `secrets` in GitHub to store credentials (like API keys).
+- Use `secrets` in GitHub to store credentials (like API keys, AWS Credentials, kubeconfig).
 - Check the [Actions Marketplace](https://github.com/marketplace?type=actions) to find reusable actions.
 
 ---
 
-## Useful Resources
+## 📖Useful Resources
 
 - [GitHub Actions Docs](https://docs.github.com/en/actions)
 - [Awesome Actions](https://github.com/sdras/awesome-actions)

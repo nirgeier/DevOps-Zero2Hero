@@ -1,6 +1,6 @@
-<div align="center">
+<div align="left">
   <img src="../../resources/images/docker-logo.png" alt="Docker" >
-</div><
+</div>
 
 <!-- omit in toc -->
 # Docker Introduction

@@ -1,4 +1,8 @@
-<<!-- omit in toc -->
+<div align="center">
+  <img src="../resources/images/docker-logo.png" alt="Docker" >
+</div><
+
+<!-- omit in toc -->
 # Docker Introduction
 
 <!-- omit in toc -->

@@ -1,5 +1,5 @@
 <div align="left">
-  <img src="../../resources/images/docker-logo.png" alt="Docker" >
+  <img src="/resources/images/docker-logo.png" alt="Docker" >
 </div>
 
 <!-- omit in toc -->

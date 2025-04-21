@@ -7,4 +7,4 @@ offering flexibility to scale up or down based on demand.
 You only pay for the compute time you use, making it a cost-efficient option for both 
 short-term tasks and long-term infrastructure.
 
-![](/Content/aws/images/ec2.png)
+![](/resources/images/ec2.png)

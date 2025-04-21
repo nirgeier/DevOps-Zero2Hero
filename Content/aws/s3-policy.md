@@ -1,18 +1,12 @@
 A bucket policy is a JSON format that specifies permissions to access an S3 bucket and its objects.
 It controls who can access the bucket and what actions they can perform (read, write, delete, etc.).
 
-EXAMPLE:
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Principal": "*",
-      "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::name-of-the-bucket/*"
-    }
-  ]
-}
+## EXAMPLE:
+
+![bucket-policy](/Content/aws/images/bucket-policy.png)
+
+
+---
 
 Effect: Allow or Deny.
 Principal: Specifies who the policy applies to (* means everyone).

@@ -78,10 +78,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-python@v4
         with:
-          node-version: ${{ inputs.node_version }}
-      - run: npm install && npm test
+          python-version: ${{ inputs.python_version }} # Flexiable way to work with variables that makes the code reusable
+      - run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pytest
 ```
 
 - We can **reuse** this from abother repository:
@@ -96,7 +99,7 @@ jobs:
   test:
     uses: my-org/my-repo/.github/workflows/test.yml@main
     with:
-      node_version: '18'
+      python_version: '3.11'
 ```
 - The calling workflow can be in the same repository or a different one (as long as it’s public or accessible).
 

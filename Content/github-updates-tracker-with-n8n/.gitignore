@@ -1,0 +1,32 @@
+# Ignore macOS system files
+.DS_Store
+
+# Ignore Windows system files
+Thumbs.db
+ehthumbs.db
+
+# VSCode settings folder
+.vscode/
+
+# Log files
+*.log
+
+# Environment variables and secrets
+.env
+
+# Docker local volumes or cache
+*.sqlite
+*.sqlite3
+
+# Node modules or temporary folders (in case of JS tools)
+node_modules/
+dist/
+tmp/
+.cache/
+
+# n8n-specific artifacts
+*.n8n.backup
+
+# Python cache (if relevant)
+__pycache__/
+*.pyc

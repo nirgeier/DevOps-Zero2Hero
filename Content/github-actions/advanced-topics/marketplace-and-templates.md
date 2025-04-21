@@ -111,7 +111,7 @@ jobs:
 |--------------------------------------|------------------|------------------------|
 | Install tools (e.g., Node, Python)   | ✅ Yes           | ❌ Not needed          |
 | Standard CI pipeline across repos    | ❌ Too low-level | ✅ Yes                 |
-| Building custom enterprise flows     | ❌               | ✅ Definitely          |
+| Building custom enterprise flows     | ❌       No        | ✅ Definitely          |
 
 ---
 

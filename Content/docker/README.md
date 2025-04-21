@@ -1,51 +1,40 @@
-# 🐳 Docker Lab: Hello Web Server
+<div align="center">
+  <img src="/resources/images/docker-logo.png" alt="Docker Zero to Hero" width="200">
+</div>
 
-This lab teaches you how to create a simple Dockerized web server, run it with Docker Compose, and automate image publishing with GitHub Actions.
+# Docker Zero to Hero 🐳
 
-Detailed commands and how to build each file is specified in the other README files.
+Welcome to the **Docker Zero to Hero** guide!
 
-
----
-## Prerequisites
-Before you begin, ensure you have the following installed:
-- 🖥️ [Docker for Windows](https://www.docker.com/products/docker-desktop/)
-- 🐧 [Docker for Linux](https://docs.docker.com/engine/install/)
-- 🔡 Git (for cloning the repo)
-
----
-### 📁 Project Structure
-
-my-project/
-├── app/                 ← source files (e.g., HTML, app code)
-│   └── index.html
-├── Dockerfile           ← Docker build instructions
-├── docker-compose.yml   ← multi-service orchestration
-├── .dockerignore        ← exclude files from Docker build context
-├── README.md            ← project instructions
-└── .github/
-    └── workflows/
-        └── docker-publish.yml  ← CI/CD pipeline
-
-Here is the basic structure for example : 
-
-Docker/
-├── Dockerfile
-├── docker-compose.yml
-├── app/
-│   └── index.html
+This section of the DevOps-Zero2Hero course provides a step-by-step, beginner-friendly deep dive into **Docker**. Whether you're completely new to containers or looking to refine your skills, this guide is for you.
 
 ---
 
-#### 🚀 Quick Start
-1. Navigate to your project directory: 
-```bash
-cd path/to/Docker
-```
-2. Run the Command : 
-```bash
-docker-compose up --build
-```
-3. Open your browser and visit : 
-http://localhost:8080
+## 📚 Table of Contents
 
+| Section | Description |
+|--------|-------------|
+| [01 - Introduction](./01-intro.md) | Introduction to Docker, Learn the basics you need to know |
+| [02 - Basic Commands](./02-basic-commands.md) | Learn the core Docker commands and their usage |
+| [03 - Dockerfile](./03-dockerfile.md) | Understand how to write Dockerfiles and build images |
+| [04 - Docker Compose](./04-docker-compose.md) | Work with multi-container setups using Docker Compose |
 
+---
+
+## ✅ How to Use
+
+1. Start from the top and read each section in order.
+2. Try out the examples in your own terminal.
+3. Use the code as templates for your own projects.
+4. Check the official docs for deeper dives.
+
+---
+
+## 📣 Contribute
+
+Found a bug? Want to improve something or add new content?
+
+Feel free to contribute at:  
+[https://github.com/nirgeier/DevOps-Zero2Hero](https://github.com/nirgeier/DevOps-Zero2Hero)
+
+Happy Learning! 🐳

@@ -7,10 +7,10 @@
 
 # 1. 🔐 Security & Best Practices in GitHub Actions
 
-## 1.1 Table of Content
+## 1.1. Table of Content
 
 - [1. 🔐 Security \& Best Practices in GitHub Actions](#1--security--best-practices-in-github-actions)
-  - [1.1 Table of Content](#11-table-of-content)
+  - [1.1. Table of Content](#11-table-of-content)
   - [1.2 🔑 Secrets Management](#12--secrets-management)
     - [1.2.1 📌 Best Practices:](#121--best-practices)
   - [1.3 🧬 OpenID Connect (OIDC) Authentication](#13--openid-connect-oidc-authentication)
@@ -72,13 +72,13 @@
 
 ## 1.4 🔒 Workflow Hardening Tips
 
-| Recommendation                    | Why it matters                                           |
-|----------------------------------|----------------------------------------------------------|
-| Use specific action versions (@v3) | Prevents breaking changes from updates                  |
-| Validate inputs using `if`        | Avoids accidental or malicious triggers                 |
-| Use minimal permissions           | Follows the principle of **least privilege**                |
-| Review third-party actions        | Ensure you're not importing malicious or outdated code  |
-| Avoid exposing secrets in logs    | Even indirectly via error messages or `echo` commands   |
+| Recommendation                     | Why it matters                                         |
+| ---------------------------------- | ------------------------------------------------------ |
+| Use specific action versions (@v3) | Prevents breaking changes from updates                 |
+| Validate inputs using `if`         | Avoids accidental or malicious triggers                |
+| Use minimal permissions            | Follows the principle of **least privilege**           |
+| Review third-party actions         | Ensure you're not importing malicious or outdated code |
+| Avoid exposing secrets in logs     | Even indirectly via error messages or `echo` commands  |
 
 ---
 

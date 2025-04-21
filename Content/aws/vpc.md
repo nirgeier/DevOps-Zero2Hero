@@ -18,4 +18,4 @@ Common AWS VPC Networking Components:
 - VPC Peering: Connects two VPCs privately. 
 - Elastic IP addresses: Static IPv4 addresses for your account.
 
-![](/Content/aws/images/vpc.png)
+![](/resources/images/vpc.png)

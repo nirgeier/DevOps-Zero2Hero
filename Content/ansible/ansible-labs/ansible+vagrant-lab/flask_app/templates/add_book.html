@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+
+{% block content %}
+  <div class="add-book-form">
+    <h2>Add a New Book</h2>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, msg in messages %}
+        <div class="alert alert-{{ category }}">{{ msg }}</div>
+      {% endfor %}
+    {% endwith %}
+
+    <form method="post">
+      <label>Title</label>
+      <input type="text" name="title" value="{{ form.title or '' }}" required/>
+
+      <label>Author</label>
+      <input type="text" name="author" value="{{ form.author or '' }}" required/>
+
+      <label>Status</label>
+      <select name="status">
+        <option value="available" {% if form.status=='available' %}selected{% endif %}>Available</option>
+        <option value="borrowed"  {% if form.status=='borrowed'  %}selected{% endif %}>Borrowed</option>
+      </select>
+
+      <button type="submit" class="btn">Add Book</button>
+    </form>
+
+    <p><a href="{{ url_for('web.index') }}">← Back to Library</a></p>
+  </div>
+{% endblock %}

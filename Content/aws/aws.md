@@ -22,3 +22,5 @@ By using AWS services we get some benefits like:
 6. Innovate Faster
 7. Global Network of Data Centers
 8. Reliability
+
+[aws_console](https://aws.amazon.com/console/)

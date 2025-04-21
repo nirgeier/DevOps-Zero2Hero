@@ -13,8 +13,8 @@
   - [1.1. Table of Content](#11-table-of-content)
   - [1.2 ❓What is the GitHub Actions Marketplace?](#12-what-is-the-github-actions-marketplace)
     - [1.3 📦 Example: Using an Official Action](#13--example-using-an-official-action)
-  - [1.4 🧩 What Are Reusable Workflows?](#14--what-are-reusable-workflows)
-    - [1.5 🧪 Example: Calling a Reusable Workflow](#15--example-calling-a-reusable-workflow)
+  - [1.4 ❓ What Are Reusable Workflows?](#14--what-are-reusable-workflows)
+    - [1.5 📦 Example: Calling a Reusable Workflow](#15--example-calling-a-reusable-workflow)
   - [1.6 ✅ When Should You Use These?](#16--when-should-you-use-these)
   - [1.7 🛡️ Trust and Security Tips](#17-️-trust-and-security-tips)
   - [1.8 🔚 Summary](#18--summary)
@@ -53,14 +53,14 @@
 
 ---
 
-## 1.4 🧩 What Are Reusable Workflows?
+## 1.4 ❓ What Are Reusable Workflows?
 
 - **Reusable workflows** are entire .yaml/.yml files that can be referenced in other workflows — just like functions in code.
 - They help you keep things consistent across projects.
 
 ---
 
-### 1.5 🧪 Example: Calling a Reusable Workflow
+### 1.5 📦 Example: Calling a Reusable Workflow
 
 - Suppose we have a reusable workflow that looks like this:
 

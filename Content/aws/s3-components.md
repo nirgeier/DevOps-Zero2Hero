@@ -1,6 +1,8 @@
 ## 1. BUCKETS: 
 Containers in S3 for data storage, functioning like directories.
 Each bucket is created within a specific AWS region and has a globally unique name.
+
+![](/Content/aws/images/s3-list-of-buckets.png)
 ## 2. OBJECTS: 
 Basic units of storage in S3, consist of a file and optional metadata.
 ## 3. KEYS: 

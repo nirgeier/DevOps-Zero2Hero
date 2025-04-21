@@ -5,13 +5,13 @@
 
 ---
 
-# 1. 🔝Advanced GitHub Actions
+# 1. 🔝 Advanced GitHub Actions
 
 ## 1.1. Table of Content
 
-- [1. 🔝Advanced GitHub Actions](#1-advanced-github-actions)
+- [1. 🔝 Advanced GitHub Actions](#1--advanced-github-actions)
   - [1.1. Table of Content](#11-table-of-content)
-  - [1.2. 📃Topics](#12-topics)
+  - [1.2. 📃 Topics](#12--topics)
 
 ---
 
@@ -21,7 +21,7 @@
 
 ---
 
-## 1.2. 📃Topics
+## 1.2. 📃 Topics
 
 - [Marketplace & Templates](./marketplace-and-templates.md)  
   *Discover how to leverage the GitHub Actions Marketplace and official reusable templates to save time and avoid reinventing the wheel.*

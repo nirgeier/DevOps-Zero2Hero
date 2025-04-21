@@ -1,175 +1,130 @@
 <div align="left">
-  <img src="/resources/images/docker-logo.png" alt="Docker" >
+    <img src="/resources/images/docker-logo.png" alt="Docker" >
 </div>
 
 <!-- omit in toc -->
-# Docker Basic Commands
+# Dockerfile
 
-<!-- omit in toc -->
 ## Table of Contents
 
 - [1. Introduction](#1-introduction)
-- [2. docker run](#2-docker-run)
-- [3. docker ps](#3-docker-ps)
-- [4. docker stop & docker rm](#4-docker-stop--docker-rm)
-- [5. docker images](#5-docker-images)
-- [6. docker pull & docker rmi](#6-docker-pull--docker-rmi)
-- [7. docker exec & docker logs](#7-docker-exec--docker-logs)
-- [8. Docker Command Cheat Sheet](#8-docker-command-cheat-sheet)
+- [2. Dockerfile Syntax](#2-dockerfile-syntax)
+- [3. Basic Dockerfile Instructions](#3-basic-dockerfile-instructions)
+- [4. Building an Image](#4-building-an-image)
+- [5. Multi-stage Builds](#5-multi-stage-builds)
+- [6. Best Practices for Writing Dockerfiles](#6-best-practices-for-writing-dockerfiles)
+- [7. Example: Dockerizing a Python App](#7-example-dockerizing-a-python-app)
 
 ---
 
 ## 1. Introduction
 
-In this section, we will introduce some of the most commonly used Docker commands. These commands are fundamental for interacting with Docker containers and images, allowing you to manage, monitor, and troubleshoot your Docker environment effectively.
+A **Dockerfile** is a script containing a series of instructions on how to build a Docker image. These instructions are executed in order to set up the environment and application inside the container.
 
 ---
 
-## 2. docker run
+## 2. Dockerfile Syntax
 
-The docker run command is used to create and start a container from a specified image.
+A Dockerfile consists of various instructions, each performing a specific task. Each instruction creates a new layer in the Docker image.
 
-### Basic Syntax:
-bash 
-docker run [OPTIONS] IMAGE [COMMAND] [ARG...] 
+> 💡**Note:** Layers are cached by Docker, which can speed up subsequent builds if the layers remain unchanged. However, excessive or unnecessary layers can increase the image size, so it's important to write efficient Dockerfiles.
 
-
-#### Example:
-bash 
-docker run hello-world 
-
-
-> 💡 *Note*: This will download the hello-world image from Docker Hub (if not already present) and run it.
-
-#### Common Options:
-- -d: Run container in detached mode (in the background).
-- -p: Map ports between the host and the container (e.g., -p 8080:80).
-- --name: Assign a custom name to the container.
-
-> 💡 *Note*: The docker run command automatically pulls the image if it's not already on your local machine.
+### Common Instructions:
+- **FROM**: Specifies the base image to use.
+- **RUN**: Executes commands in the image.
+- **COPY**: Copies files from the host to the container.
+- **CMD**: Specifies the default command to run when a container is started.
+- **ENTRYPOINT**: Defines a command that will always run when the container starts.
+- **WORKDIR**: Sets the working directory for any subsequent commands.
 
 ---
 
-## 3. docker ps
+## 3. Basic Dockerfile Instructions
 
-The docker ps command lists all the running containers.
+### FROM
 
-### Basic Syntax:
-bash 
-docker ps 
-
-#### Example Output:
-
-plaintext
-CONTAINER ID   IMAGE           COMMAND                  CREATED        STATUS       PORTS                  NAMES
-d9b100f2f636   ubuntu:18.04    "bash"                   5 minutes ago  Up 4 minutes  0.0.0.0:8080->80/tcp   nice_boyd
-
-
-Use the -a flag to show all containers, including those that are stopped:
-bash 
-docker ps -a 
-
-Display the running container IDs without any additional information or formatting. 
-bash 
-docker ps -q 
-
-handy when you want to stop a single running container quickly without manually copying its ID.
-
-bash 
-docker stop $(docker ps -q)
-
----
-
-## 4. docker stop & docker rm
-
-- docker stop: Stops a running container.
-- docker rm: Removes a container (useful after stopping a container).
-
-### Example:
-bash 
-docker stop <container_name_or_id> 
-
-bash 
-docker rm <container_name_or_id> 
-
-
-You can combine both commands in one line to stop and remove a container:
-bash 
-docker rm -f <container_name_or_id> 
-
-
----
-
-## 5. docker images
-
-The docker images command lists all available images on your system.
-
-### Basic Syntax:
-bash 
-docker images 
-
-
-#### Example Output:
- plaintext
- REPOSITORY          TAG       IMAGE ID       CREATED         SIZE
- ubuntu              18.04     3b8a3e55e4f3   3 days ago      64.2MB
- hello-world         latest    fce289e99eb9   4 months ago    1.84kB
- 
----
-
-## 6. docker pull & docker rmi
-
-- docker pull: Downloads a Docker image from a registry (e.g., Docker Hub).
-  
-  ``bash 
-  docker pull <image_name> 
-  
-
-- `docker rmi`: Removes an image from your local system.
-  
-  bash 
-  docker rmi <image_name_or_id> 
-  
-
-> ⚠ **Caution**: Be sure that the image is not in use by any containers before removing it.
-
----
-
-## 7. docker exec & docker logs
-
-- `docker exec`: Executes a command inside a running container.
-
-  ### Example:
-  bash 
-  docker exec -it <container_name_or_id> bash 
-  
-
-  This opens a Bash shell inside the container.
-
-- `docker logs`: Fetches logs from a running container.
-
-  ### Example:
-bash 
-docker logs <container_name_or_id> 
+```bash
+FROM <image>
 ```
 
+- The `FROM` instruction specifies the base image to use for the container. It is mandatory and must be the first instruction in a Dockerfile.
+
+    ### Example:
+    ```Dockerfile
+    FROM ubuntu:20.04
+    ```
+
+### RUN
+```bash
+RUN <command>
+```
+- The `RUN` instruction executes commands in a new layer on top of the current image. To reduce the number of layers, you can combine multiple commands using `&&`.
+
+    ### Example:
+    ```Dockerfile
+    RUN apt-get update && apt-get install -y python3 python3-pip
+    ```
+
+### COPY
+```bash
+COPY <source> <destination>
+```
+- The `COPY` instruction copies files from your host machine into the Docker image.
+- Unlike `ADD`, `COPY` is more straightforward and does not support features like extracting tar files or downloading files from URLs. Use `COPY` when you only need to copy files and directories.
+
+    ### Example:
+    ```Dockerfile
+    COPY . /app
+    ```
+    This copies the entire current directory to the `/app` folder inside the container.
+
+### CMD
+```bash
+CMD ["executable", "param1", "param2"]
+```
+- The `CMD` instruction specifies the default command to run when the container is started. It can be overridden by arguments passed to the `docker run` command.
+
+    ### Example:
+    ```Dockerfile
+    CMD ["python3", "app.py"]
+    ```
+
 ---
 
-## 8. Docker Command Cheat Sheet
+## 4. Building an Image
 
-| Command                     | Description                                                  |
-|-----------------------------|--------------------------------------------------------------|
-| docker run                 | Start a container from an image                              |
-| docker ps                  | List running containers                                      |
-| docker stop <container>    | Stop a running container                                     |
-| docker rm <container>      | Remove a container                                           |
-| docker images              | List local Docker images                                     |
-| docker pull <image>        | Pull an image from Docker Hub or other registry              |
-| docker rmi <image>         | Remove a Docker image                                        |
-| docker exec -it <container>| Run a command inside a running container (interactive mode)  |
-| docker logs <container>    | View logs for a container                                    |
-| docker inspect --type      | View detailed information about a Docker object by type      |
+Once you’ve written your Dockerfile, you can build the image using the `docker build` command.
 
-> 💡 *Tip*: Keep this cheat sheet handy when working with Docker to speed up your workflow!
+### Syntax:
+```bash
+docker build -t <image_name> .
+```
+
+### Example:
+```bash
+docker build -t my-python-app .
+```
+
+This will build a Docker image from the Dockerfile in the current directory.
 
 ---
+
+## 5. Multi-stage Builds
+
+Multi-stage builds allow you to create smaller, more efficient images by separating the build and runtime environments. This approach reduces the final image size by excluding unnecessary build tools and dependencies, and it improves security by minimizing the attack surface in the runtime image.
+
+### Example:
+
+```Dockerfile
+# Stage 1: Build the app
+FROM node:14 AS build-stage
+WORKDIR /app
+COPY . .
+RUN npm install
+
+# Stage 2: Run the app
+FROM node:14-slim AS runtime-stage
+WORKDIR /app
+COPY --from=build-stage /app .
+CMD ["npm", "start"]
+```

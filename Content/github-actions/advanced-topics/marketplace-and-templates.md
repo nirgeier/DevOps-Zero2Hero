@@ -80,7 +80,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         with:
-          python-version: ${{ inputs.python_version }} # Flexiable way to work with variables that makes the code reusable
+          python-version: ${{ inputs.python_version }} # Flexible way to work with variables that makes the code reusable
       - run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt

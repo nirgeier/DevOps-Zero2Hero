@@ -87,7 +87,7 @@ jobs:
           pytest
 ```
 
-- We can **reuse** this from abother repository:
+- We can **reuse** this from another repository:
 
 ```yaml
 # .github/workflows/call-test.yml
@@ -111,7 +111,6 @@ jobs:
 |--------------------------------------|------------------|------------------------|
 | Install tools (e.g., Node, Python)   | ✅ Yes           | ❌ Not needed          |
 | Standard CI pipeline across repos    | ❌ Too low-level | ✅ Yes                 |
-| Simple deployment to Firebase, S3 etc.| ✅ Yes           | ✅ Maybe               |
 | Building custom enterprise flows     | ❌               | ✅ Definitely          |
 
 ---

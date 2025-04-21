@@ -26,3 +26,4 @@ jobs:
       with:
         push: true
         tags: yourdockerhubusername/docker-lab:latest
+        

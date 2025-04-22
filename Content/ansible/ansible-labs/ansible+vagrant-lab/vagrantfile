@@ -3,57 +3,6 @@ Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/focal64"
   config.vm.box_check_update = false
 
-  # Master node: Ansible control host
-  config.vm.define "master" do |master|
-    master.vm.hostname = "master"
-    master.vm.network "private_network", ip: "192.168.56.10"
-    master.vm.provider "virtualbox" do |vb|
-      vb.memory = 1024
-      vb.cpus   = 1
-    end
-    master.vm.synced_folder ".", "/vagrant", type: "virtualbox"
-
-    # Provision Ansible and set up SSH-based access keys
-    master.vm.provision "shell", inline: <<-SHELL
-      sudo apt-get update -y
-      sudo apt-get install -y python3-pip openssh-client
-      sudo pip3 install ansible
-
-      # Prepare SSH directory
-      mkdir -p /home/vagrant/.ssh
-
-      # Copy individual VM private keys for Ansible
-      cp /vagrant/.vagrant/machines/frontend/virtualbox/private_key /home/vagrant/.ssh/frontend_key
-      cp /vagrant/.vagrant/machines/backend/virtualbox/private_key  /home/vagrant/.ssh/backend_key
-      chmod 600 /home/vagrant/.ssh/frontend_key /home/vagrant/.ssh/backend_key
-      chown -R vagrant:vagrant /home/vagrant/.ssh
-
-      # Create Ansible config pointing to our inventory
-      cat <<EOF > /home/vagrant/.ansible.cfg
-[defaults]
-inventory = /vagrant/inventory.ini
-remote_user = vagrant
-host_key_checking = False
-
-[ssh_connection]
-ssh_args = -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
-EOF
-      chown vagrant:vagrant /home/vagrant/.ansible.cfg
-
-      # Generate an inventory that uses the copied keys
-      cat <<EOF > /vagrant/inventory.ini
-[frontend]
-frontend ansible_host=192.168.56.11 ansible_ssh_private_key_file=/home/vagrant/.ssh/frontend_key
-
-[backend]
-backend  ansible_host=192.168.56.12 ansible_ssh_private_key_file=/home/vagrant/.ssh/backend_key
-
-[all:vars]
-ansible_python_interpreter=/usr/bin/python3
-EOF
-    SHELL
-  end
-
   # Frontend node: Nginx server
   config.vm.define "frontend" do |frontend|
     frontend.vm.hostname = "frontend"
@@ -74,5 +23,51 @@ EOF
       vb.cpus   = 1
     end
     backend.vm.synced_folder ".", "/vagrant", type: "virtualbox"
+  end
+
+  # Master node: Ansible control host (provision after other VMs)
+  config.vm.define "master" do |master|
+    master.vm.hostname = "master"
+    master.vm.network "private_network", ip: "192.168.56.10"
+    master.vm.provider "virtualbox" do |vb|
+      vb.memory = 1024
+      vb.cpus   = 1
+    end
+    master.vm.synced_folder ".", "/vagrant", type: "virtualbox"
+
+    # Provision Ansible and set up SSH keys
+    master.vm.provision "shell", inline: <<-SHELL
+      sudo apt-get update -y
+      sudo apt-get install -y python3-pip openssh-client
+      sudo pip3 install ansible
+
+      mkdir -p /home/vagrant/.ssh
+      cp /vagrant/.vagrant/machines/frontend/virtualbox/private_key /home/vagrant/.ssh/frontend_key
+      cp /vagrant/.vagrant/machines/backend/virtualbox/private_key  /home/vagrant/.ssh/backend_key
+      chmod 600 /home/vagrant/.ssh/frontend_key /home/vagrant/.ssh/backend_key
+      chown -R vagrant:vagrant /home/vagrant/.ssh
+
+      cat <<EOF > /home/vagrant/.ansible.cfg
+[defaults]
+inventory = /vagrant/inventory.ini
+remote_user = vagrant
+host_key_checking = False
+
+[ssh_connection]
+ssh_args = -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
+EOF
+      chown vagrant:vagrant /home/vagrant/.ansible.cfg
+
+      cat <<EOF > /vagrant/inventory.ini
+[frontend]
+frontend ansible_host=192.168.56.11 ansible_ssh_private_key_file=/home/vagrant/.ssh/frontend_key
+
+[backend]
+backend  ansible_host=192.168.56.12 ansible_ssh_private_key_file=/home/vagrant/.ssh/backend_key
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+EOF
+    SHELL
   end
 end

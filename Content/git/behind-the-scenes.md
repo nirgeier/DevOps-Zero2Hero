@@ -66,7 +66,7 @@ Contains objects that represent your repository's history and content. This is w
     `git cat-file -p master^{tree}` -  Shows the tree in the specified branch. 
     
 3. Annotated tags - The annotated tag object include metadata, who made the tag, the dates, a tag message and it stores a reference to a commit.
-4. Commits - Commit objects combine a tree object along with information about context thta led to the current tree. Commits store a reference to parent commit[s], the author, the commiter, and the commit message.
+4. Commits - Commit objects combine a tree object along with information about context that led to the current tree. Commits store a reference to parent commit[s], the author, the commiter, and the commit message.
 
 A commit object and it's parent:
 ![Commit object](resources/commit-object.png)

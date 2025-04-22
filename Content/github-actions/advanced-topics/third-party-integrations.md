@@ -1,6 +1,6 @@
 <!-- omit in toc -->
 <div align="center">
-  <img src="/Content/github-actions/resources/logos/github-security.png" alt="DevOps-Zero2Hero" width="100" style="border-radius: 25%;padd">
+  <img src="/resources/images/logos/logos_github_actions.svg" alt="DevOps-Zero2Hero" width="100" style="border-radius: 25%;padd">
 </div>
 
 ---

@@ -7,10 +7,10 @@
 
 # 1. 🛒GitHub Actions Marketplace & Reusable Templates
 
-## 1.1. Table of Content
+## 1.1 Table of Content
 
 - [1. 🛒GitHub Actions Marketplace \& Reusable Templates](#1-github-actions-marketplace--reusable-templates)
-  - [1.1. Table of Content](#11-table-of-content)
+  - [1.1 Table of Content](#11-table-of-content)
   - [1.2 ❓ What is the GitHub Actions Marketplace?](#12--what-is-the-github-actions-marketplace)
     - [1.2.1 📦 Example: Using an Official Action](#121--example-using-an-official-action)
   - [1.3 ❓ What Are Reusable Workflows?](#13--what-are-reusable-workflows)

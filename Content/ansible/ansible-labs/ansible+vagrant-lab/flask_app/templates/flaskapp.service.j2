@@ -3,16 +3,13 @@ Description=Gunicorn instance serving Flask Library App
 After=network.target
 
 [Service]
-User={{ flask_user }}
-Group={{ flask_group }}
 WorkingDirectory={{ flask_workdir }}
 Environment="PATH={{ flask_workdir }}/venv/bin"
-Environment="MONGO_URI={{ mongo_uri }}"
-
 ExecStart={{ flask_workdir }}/venv/bin/gunicorn \
-          -w {{ gunicorn_workers }} \
-          -b 0.0.0.0:{{ flask_port }} \
-          library:create_app()
+  -w {{ gunicorn_workers }} \
+  -b 0.0.0.0:{{ flask_port }} \
+  flask_app.library:create_app
+
 
 [Install]
 WantedBy=multi-user.target

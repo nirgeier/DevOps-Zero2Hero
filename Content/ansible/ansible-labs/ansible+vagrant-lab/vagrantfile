@@ -1,38 +1,34 @@
 Vagrant.configure("2") do |config|
-  # Base box config
-  config.vm.box              = "ubuntu/focal64"
+  # Base box configuration
+  config.vm.box = "ubuntu/focal64"
   config.vm.box_check_update = false
 
-  # Share your LOCAL repo into each VM at /vagrant
-  config.vm.synced_folder ".", "/vagrant", type: "virtualbox"
-
-  # ----------------------------------------
   # Master node: Ansible control host
   config.vm.define "master" do |master|
     master.vm.hostname = "master"
-    master.vm.network  "private_network", ip: "192.168.56.10"
+    master.vm.network "private_network", ip: "192.168.56.10"
     master.vm.provider "virtualbox" do |vb|
       vb.memory = 1024
       vb.cpus   = 1
     end
+    master.vm.synced_folder ".", "/vagrant", type: "virtualbox"
 
+    # Provision Ansible and set up SSH-based access keys
     master.vm.provision "shell", inline: <<-SHELL
-      set -e
-      # Install Ansible and SSH client
       sudo apt-get update -y
       sudo apt-get install -y python3-pip openssh-client
       sudo pip3 install ansible
 
-      # Prepare SSH keys so Ansible can reach the other nodes
+      # Prepare SSH directory
       mkdir -p /home/vagrant/.ssh
-      cp /vagrant/.vagrant/machines/frontend/virtualbox/private_key \
-         /home/vagrant/.ssh/frontend_key
-      cp /vagrant/.vagrant/machines/backend/virtualbox/private_key  \
-         /home/vagrant/.ssh/backend_key
-      chmod 600 /home/vagrant/.ssh/*_key
+
+      # Copy individual VM private keys for Ansible
+      cp /vagrant/.vagrant/machines/frontend/virtualbox/private_key /home/vagrant/.ssh/frontend_key
+      cp /vagrant/.vagrant/machines/backend/virtualbox/private_key  /home/vagrant/.ssh/backend_key
+      chmod 600 /home/vagrant/.ssh/frontend_key /home/vagrant/.ssh/backend_key
       chown -R vagrant:vagrant /home/vagrant/.ssh
 
-      # Write an Ansible config that points at our /vagrant/inventory.ini
+      # Create Ansible config pointing to our inventory
       cat <<EOF > /home/vagrant/.ansible.cfg
 [defaults]
 inventory = /vagrant/inventory.ini
@@ -44,7 +40,7 @@ ssh_args = -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no
 EOF
       chown vagrant:vagrant /home/vagrant/.ansible.cfg
 
-      # Generate inventory (will live under DevOps-Zero2Hero/inventory.ini on host)
+      # Generate an inventory that uses the copied keys
       cat <<EOF > /vagrant/inventory.ini
 [frontend]
 frontend ansible_host=192.168.56.11 ansible_ssh_private_key_file=/home/vagrant/.ssh/frontend_key
@@ -58,25 +54,25 @@ EOF
     SHELL
   end
 
-  # ----------------------------------------
-  # Frontend node: will get its code via /vagrant
+  # Frontend node: Nginx server
   config.vm.define "frontend" do |frontend|
     frontend.vm.hostname = "frontend"
-    frontend.vm.network  "private_network", ip: "192.168.56.11"
+    frontend.vm.network "private_network", ip: "192.168.56.11"
     frontend.vm.provider "virtualbox" do |vb|
       vb.memory = 512
       vb.cpus   = 1
     end
+    frontend.vm.synced_folder ".", "/vagrant", type: "virtualbox"
   end
 
-  # ----------------------------------------
-  # Backend node: same deal
+  # Backend node: Flask API
   config.vm.define "backend" do |backend|
     backend.vm.hostname = "backend"
-    backend.vm.network  "private_network", ip: "192.168.56.12"
+    backend.vm.network "private_network", ip: "192.168.56.12"
     backend.vm.provider "virtualbox" do |vb|
       vb.memory = 512
       vb.cpus   = 1
     end
+    backend.vm.synced_folder ".", "/vagrant", type: "virtualbox"
   end
 end

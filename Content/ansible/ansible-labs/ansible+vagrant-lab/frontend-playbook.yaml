@@ -1,6 +1,6 @@
 # frontend-playbook.yaml
 ---
-- name: Deploy Flask Book‑Library frontend
+- name: Deploy Flask Book-Library frontend
   hosts: frontend
   become: yes
 
@@ -68,7 +68,7 @@
         dest: /etc/systemd/system/flaskapp.service
         mode: 0644
         force: yes
-      notify: Restart Flaskapp
+      notify: Reload systemd & restart Flaskapp
       tags: [deploy_template]
 
     - name: Enable and start flaskapp

@@ -1,12 +1,24 @@
-# AUFS:
+<!-- omit in toc -->
+# AUFS
 
-AUFS is Union file system that know how to read different **layers** and unite them to one 
-virtual layer, that is to say - one file system. 
-It is used mainly in containerization technologies like Docker. 
-AUFS enabling quick image creation.
-Today, AUFS is almost not in use and instead of it, there are Overlay/Overlay2.
 
-![](/resources/images/aufs-example.png)
+<div align="center">
+  <img src="/resources/images/cover-rounded.png" alt="DevOps-Zero2Hero" width="500">
+</div>
+
+---
+
+- [About](#about)
+- [What the purpose?](#what-the-purpose)
+
+## About
+
+- AUFS is Union file system that know how to read different **layers** and unite them to one virtual layer, that is to say - one file system. 
+- It is used mainly in containerization technologies like Docker. 
+- AUFS enabling quick image creation.
+- Today, AUFS is almost not in use and instead of it, there are `Overlay/Overlay2`.
+
+![](../../resources/images/aufs-example.png)
 
 In the container, if we do the command ‘ls’ we will see the 4 files above in the 
 image example(the first row). This is the file system. 

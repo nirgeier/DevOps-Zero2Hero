@@ -24,7 +24,7 @@ After we command ‘docker run’ every layer deployed and locked to write, in o
 and on top of them docker create new layer of read/write. 
 
 ## What the purpose?
-In this method we can keep using those layers to another containers. 
+By using this method we can keep using those layers by another containers. 
 The layers are static(because they read-only), so the next container we will create could use layers 
 from previous containers and it doesn’t need to download them once again. 
 Docker just create a pointer to this layer we need, for our new container, 

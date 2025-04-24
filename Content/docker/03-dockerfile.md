@@ -73,7 +73,6 @@ Display the running container IDs without any additional information or formatti
 bash 
 docker ps -q 
 
-Display the running container IDs without formatting (add -a to see all).  
 handy when you want to stop a single running container quickly without manually copying its ID.
 
 bash 

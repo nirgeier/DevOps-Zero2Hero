@@ -8,7 +8,8 @@ Environment="PATH={{ flask_workdir }}/venv/bin"
 ExecStart={{ flask_workdir }}/venv/bin/gunicorn \
   -w {{ gunicorn_workers }} \
   -b 0.0.0.0:{{ flask_port }} \
-  flask_app.library:create_app
+  app:app
+
 
 
 [Install]

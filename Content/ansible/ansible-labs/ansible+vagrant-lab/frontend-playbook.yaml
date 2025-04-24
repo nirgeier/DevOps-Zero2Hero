@@ -47,7 +47,7 @@
     - name: Copy Flask package code
       copy:
         src: flask_app/
-        dest: "{{ flask_workdir }}/"
+        dest: "{{ flask_workdir }}/flask_app/"
         owner: "{{ flask_user }}"
         group: "{{ flask_group }}"
         mode: '0755'

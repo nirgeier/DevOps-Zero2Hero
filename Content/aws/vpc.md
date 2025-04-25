@@ -17,3 +17,5 @@ Common AWS VPC Networking Components:
 - Network Access Control Lists (NACLs): Firewall controlling traffic for subnets. 
 - VPC Peering: Connects two VPCs privately. 
 - Elastic IP addresses: Static IPv4 addresses for your account.
+
+![](/resources/images/vpc.png)

@@ -1,5 +1,4 @@
-There are 2 types of subnets - private and public.
-
+## SUBNETS:
 ### PRIVATE SUBNETS:
 Private subnets are not directly accessible from the internet, but can be accessed 
 through a NAT gateway or VPN.
@@ -11,20 +10,20 @@ Public subnets are accessible over the internet, and in AWS, are connected to an
 These subnets are used when resources need to be directly accessible online.
 Because their vulnerability to attacks They require security measures.
 
-### ROUTE TABLE:
+## ROUTE TABLE:
 A route table directs network traffic based on destination IP addresses.
 Each subnet in a VPC is associated with one route table.
 
-### INTERNET GATEWAY:
+## INTERNET GATEWAY:
 IGW Connects a network to the internet.
 Enables VPC instances(=machines) to access the internet.
 Allows internet users to access public resources within the VPC.
 
-### NAT GATEWAY:
+## NAT GATEWAY:
 Allows private network devices to access the internet and 
 it Provides public IP address to these devices.
 
-### ELASTIC IP:
+## ELASTIC IP:
 An Elastic IP is a static, public IPv4 address used in AWS.
 It's associated with your AWS account, not a specific instance(for case that instance is fall down 
 in cluster for example, it doesnt change the IP address when another instance will create).

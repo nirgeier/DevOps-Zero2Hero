@@ -1,5 +1,7 @@
 # AWS README
 
+![](/resources/images/console-home.png)
+
 First of all, we'll ask ourself what is cloud computing? Cloud computing is the delivery of computing 
 services (like storage, processing power and software)over the internet, rather than on local servers or 
 personal devices. There are major three cloud providers - Amazon(AWS), Google(GCP) and 
@@ -22,3 +24,5 @@ By using AWS services we get some benefits like:
 6. Innovate Faster
 7. Global Network of Data Centers
 8. Reliability
+
+For aws console: [aws-console](https://aws.amazon.com/console/)

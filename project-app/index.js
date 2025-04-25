@@ -13,11 +13,11 @@ app.get("/health", (req, res) => {
 
 // Root route: Welcome message and basic usage info
 app.get('/', (req, res) => {
-  res.json({
-    message: 'Welcome to the Rick and Morty Proxy API!',
-    usage: '/characters, /character/:id, /random, /episodes, /episode/:episodeId/characters, /health',
-    source: 'https://rickandmortyapi.com/'
-  });
+    res.json({
+        message: 'Welcome to the Rick and Morty Proxy API!',
+        usage: '/characters, /character/:id, /random, /episodes, /episode/:episodeId/characters, /health',
+        source: 'https://rickandmortyapi.com/'
+    });
 });
 
 

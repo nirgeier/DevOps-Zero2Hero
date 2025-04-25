@@ -35,7 +35,7 @@ jobs:
             - name: Build and Push Docker Image
               uses: docker/build-push-action@v5
               with:
-                context: .                            # Build context – here it's the root of the repository
+                context: ./project-app                # Build context – here it's the root of the repository
                 push: true                            # Push the built image to Docker Hub
                 platforms: linux/amd64,linux/arm64    # Enables true multi-platform builds
                 tags: username/repo:latest            # Image name and tag – replace with your actual Docker Hub repo and Username

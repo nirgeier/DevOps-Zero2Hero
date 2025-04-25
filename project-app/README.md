@@ -139,16 +139,3 @@ If an error occurs (e.g., a character doesn't exist or the API is down), the ser
 ```
 
 HTTP status codes are used appropriately (e.g., 404, 500).
-
----
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-## Credits
-
-- [Rick and Morty API](https://rickandmortyapi.com/)
-- Built with [Express](https://expressjs.com/) and [Axios](https://axios-http.com/)

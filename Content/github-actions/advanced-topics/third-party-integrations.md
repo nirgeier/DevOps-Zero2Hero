@@ -21,7 +21,6 @@
   - [1.5 🛡️ Security Notes](#15-️-security-notes)
   - [1.6 🔚 Summary](#16--summary)
 
-
 ---
 
 ## 1.2 💡 Why Use Third-Party Integrations?

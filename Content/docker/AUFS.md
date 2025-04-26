@@ -1,8 +1,9 @@
-## AUFS – Another Union File System
+# AUFS – Another Union File System
 
 **AUFS (Another Union File System)** is a special type of filesystem that allows multiple directories (called branches) to be combined into a single unified view. Docker used AUFS in earlier versions as one of its storage drivers to manage image layers.
 
-### How Docker Uses AUFS
+---
+## How Docker Uses AUFS
 
 When a Docker container is started, Docker stacks multiple **read-only layers** (from base images such as `ubuntu` or `mysql`) and adds a **writable layer** on top. This layered structure allows Docker to:
 
@@ -12,7 +13,9 @@ When a Docker container is started, Docker stacks multiple **read-only layers** 
 
 If multiple images are based on the same parent image (e.g., Ubuntu), Docker reuses those base layers and only downloads or creates layers that are not already present.
 
-### Example: Running a Container
+---
+
+## Example: Running a Container
 
 When you run the following command:
 
@@ -29,6 +32,7 @@ Docker performs the following steps:
 
 
 Next time you will run a different image that shares the same base image :
+
 ```bash
 docker run -it custom-img
 ```

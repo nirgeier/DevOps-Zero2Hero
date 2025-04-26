@@ -40,7 +40,7 @@ By default, the server runs on port 3000, or a port defined in your environment 
 To test it locally:
 http://localhost:3000
 Or, if you're running the app on a remote server:
-http://serer.IP:3000
+http://SEREVR.IP:3000
 
 Now, install PM2 and start the application again with a prefered name:
 

@@ -69,7 +69,8 @@
         mode: 0644
         force: yes
       notify: Reload systemd & restart Flaskapp
-      tags: [deploy_template]
+      tags:
+        - deploy_template
 
     - name: Enable and start flaskapp
       systemd:
@@ -86,15 +87,20 @@
         port: "{{ flask_port }}"
         delay: 2
         timeout: 30
-      tags: [smoketest]
+      tags:
+        - smoketest
 
     - name: API smoketest – list books
       uri:
         url: "http://127.0.0.1:{{ flask_port }}/api/v1/books"
+        return_content: yes
         status_code: 200
       register: api
-      failed_when: api.json is not iterable
-      tags: [smoketest]
+      until: api.json is defined and api.json is iterable
+      retries: 5
+      delay: 3
+      tags:
+        - smoketest
 
     - name: HTML smoketest – title string present
       uri:
@@ -103,7 +109,9 @@
         status_code: 200
       register: page
       failed_when: "'Book Library' not in page.content"
-      tags: [smoketest]
+      tags:
+        - smoketest
+
     # ── reload + restart at the end ────────────────────────────────────────────
     - name: Reload systemd daemon
       become: yes
@@ -117,8 +125,8 @@
         state: restarted
 
   handlers:
-  - name: Reload systemd & restart Flaskapp
-    systemd:
-      daemon_reload: yes
-      name: flaskapp
-      state: restarted
+    - name: Reload systemd & restart Flaskapp
+      systemd:
+        daemon_reload: yes
+        name: flaskapp
+        state: restarted

@@ -14,7 +14,7 @@
 - AUFS enabling quick image creation.
 - Today, AUFS is almost not in use and instead of it, there are `Overlay/Overlay2`.
 
-![](/resources/images/aufs-example.png)
+![](Content/docker/resources/images/aufs-example.png)
 
 In the container, if we do the command ‘ls’ we will see the 4 files above in the 
 image example(the first row). This is the file system. 
@@ -22,7 +22,7 @@ Behind the scenes, Docker is build the image from some other images that pile up
 one on another(the other 3 rows), and together compose the image. 
 When we do ‘docker run’ the image turn to container.
 
-![](/resources/images/image-example.png)
+![](Content/docker/resources/images/image-example.png)
 
 So, in this example we have a container that composed of 3 images - Ubuntu, Postgres and Nginx. 
 Those 3 images compose our image. It’s like a layers cake - every layer could considered as a cake 

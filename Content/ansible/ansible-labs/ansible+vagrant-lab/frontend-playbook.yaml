@@ -59,7 +59,7 @@
 
     - name: Install Python dependencies
       pip:
-        requirements: "{{ flask_workdir }}/requirements.txt"
+        requirements: "{{ flask_workdir }}/flask_app/requirements.txt"
         virtualenv: "{{ flask_workdir }}/venv"
 
     - name: Deploy flaskapp.service

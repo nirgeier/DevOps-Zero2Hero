@@ -1,0 +1,86 @@
+# backend-playbook.yaml
+---
+- name: Install & configure MongoDB backend
+  hosts: backend
+  become: yes
+
+  vars_prompt:
+    - name: "mongo_user"
+      prompt: "🔒 Mongo admin username"
+      private: no
+    - name: "mongo_password"
+      prompt: "🔒 Mongo admin password"
+      private: yes
+
+  vars:
+    mongo_repo: "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse"
+    mongo_key_url: "https://www.mongodb.org/static/pgp/server-4.4.asc"
+    mongo_db_name: "projectdb"
+    mongo_port: 27017
+
+  tasks:
+    - name: Add MongoDB GPG key
+      apt_key:
+        url: "{{ mongo_key_url }}"
+        state: present
+
+    - name: Add MongoDB repository
+      apt_repository:
+        repo: "{{ mongo_repo }}"
+        filename: "mongodb-org-4.4"
+        state: present
+
+    - name: Install MongoDB and pymongo
+      apt:
+        name:
+          - mongodb-org
+          - python3-pymongo
+        state: present
+        update_cache: yes
+
+    - name: Enable and start mongod
+      service:
+        name: mongod
+        state: started
+        enabled: yes
+
+    - name: Ensure bindIp is 0.0.0.0 under net
+      block:
+        - lineinfile:
+            path: /etc/mongod.conf
+            line: "net:"
+            state: present
+        - lineinfile:
+            path: /etc/mongod.conf
+            insertafter: '^net:'
+            regexp: '^\s*bindIp:'
+            line: '  bindIp: 0.0.0.0'
+            backup: yes
+      notify: Restart MongoDB
+
+    - name: Create Mongo user {{ mongo_user }} on {{ mongo_db_name }}
+      shell: |
+        mongo {{ mongo_db_name }} --quiet --eval '
+          if (db.getUser("{{ mongo_user }}") === null) {
+            db.createUser({
+              user:"{{ mongo_user }}",
+              pwd:"{{ mongo_password }}",
+              roles:[{role:"readWrite", db:"{{ mongo_db_name }}"}]
+            });
+          }
+        '
+      args:
+        warn: false
+
+    - name: Wait for MongoDB to accept TCP on {{ mongo_port }}
+      wait_for:
+        host: 127.0.0.1
+        port: "{{ mongo_port }}"
+        timeout: 30
+      tags: [smoketest]
+
+  handlers:
+    - name: Restart MongoDB
+      service:
+        name: mongod
+        state: restarted

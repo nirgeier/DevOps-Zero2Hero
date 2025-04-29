@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Book Library</title>
+</head>
+<body>
+  <h1>Book Library</h1>
+  <ul>
+    {% for b in books %}
+      <li>
+        <strong>{{ b.title }}</strong> by {{ b.author }} —
+        status: <em>{{ b.status }}</em>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <h2>Add a new book</h2>
+  <form id="addForm">
+    <label>Title:
+      <input type="text" name="title">
+    </label><br>
+    <label>Author:
+      <input type="text" name="author">
+    </label><br>
+    <label>Status:
+      <select name="status">
+        <option>available</option>
+        <option>checked-out</option>
+      </select>
+    </label><br>
+    <button type="submit">Add Book</button>
+  </form>
+
+  <script>
+    document.getElementById('addForm').onsubmit = async e => {
+      e.preventDefault();
+      const f = e.target;
+      const payload = {title:f.title.value, author:f.author.value, status:f.status.value};
+      const res = await fetch('/api/v1/books', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify(payload)
+      });
+      if (res.ok) return window.location.reload();
+      alert('Failed to add book');
+    };
+  </script>
+</body>
+</html>

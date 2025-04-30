@@ -7,10 +7,10 @@
 
 # 1. 🔐 Security & Best Practices in GitHub Actions
 
-## 1.1. Table of Content
+## 1.1 Table of Content
 
 - [1. 🔐 Security \& Best Practices in GitHub Actions](#1--security--best-practices-in-github-actions)
-  - [1.1. Table of Content](#11-table-of-content)
+  - [1.1 Table of Content](#11-table-of-content)
   - [1.2 🔑 Secrets Management](#12--secrets-management)
     - [1.2.1 📌 Best Practices:](#121--best-practices)
   - [1.3 🧬 OpenID Connect (OIDC) Authentication](#13--openid-connect-oidc-authentication)

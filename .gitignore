@@ -1,6 +1,6 @@
-# This is a simple .gitignore file with a basic structure.
+# Created by https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,python,git
+# Edit at https://www.toptal.com/developers/gitignore?templates=node,visualstudiocode,python,git
 
-# Ignore specific files or directories
 .idea/
 .DS_Store
 

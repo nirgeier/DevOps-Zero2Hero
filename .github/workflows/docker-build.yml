@@ -2,9 +2,9 @@ name: Build and Push Docker Image
 
 on:
   push:
-    branches: [ "Rafgarn-branch" ]
+    branches: [ "Your-branch" ]
   pull_request:
-    branches: [ "Rafgarn-branch" ]
+    branches: [ "Your-branch" ]
 
 jobs:
   build:
@@ -28,4 +28,4 @@ jobs:
         with:
           context: ./project-app  # Path to your application
           push: true
-          tags: rafaelagar/nodeapp:latest
+          tags: user/nodeapp:latest

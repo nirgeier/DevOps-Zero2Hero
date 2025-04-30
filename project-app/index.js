@@ -11,6 +11,15 @@ app.get("/health", (req, res) => {
     res.send("OK");
 });
 
+// ✅ Root route: add usage instructions
+app.get('/', (req, res) => {
+  res.json({
+    message: 'Welcome to the Rick and Morty Proxy API!',
+    usage: 'Try /characters?page=1 or /character/1 or /location/2',
+    source: 'https://rickandmortyapi.com/'
+  });
+});
+
 // Get all characters (with pagination)
 app.get("/characters", async (req, res) => {
     try {

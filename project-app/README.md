@@ -35,23 +35,7 @@ npm install
 npm start
 ```
 
-By default, the server runs on port 3000, or a port defined in your environment variables.
-
-To test it locally:
-http://localhost:3000
-Or, if you're running the app on a remote server:
-http://SEREVR.IP:3000
-
-Now, install PM2 and start the application again with a prefered name:
-
-```
-npm install -g pm2
-pm2 start index.js --name rick-morty-proxy 
-pm2 status
-
-```
-
-PM2 ensures your Node.js app stays running in the background, even if the terminal closes or the server restarts.
+By default, the server runs on `http://localhost:3000`, or a port defined in your environment variables.
 
 ---
 

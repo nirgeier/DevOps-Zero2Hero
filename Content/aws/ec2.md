@@ -21,12 +21,12 @@ You only pay for the compute capacity you use, and you can choose from several b
 
 
 <div align="center">
-  <img src="./resources/images/ec2.png" width="500">
+  <img src="/resources/images/ec2.png" width="500">
 </div>
 
 
-
 ---
+
 <!--NAVIGATION_START -->
 <div style="text-align: center">
 

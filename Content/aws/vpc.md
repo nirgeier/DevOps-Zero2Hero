@@ -32,7 +32,11 @@ When you create a new EC2 instance, AWS automatically selects the default VPC, w
 ---
 
 <div align="center">
-  <img src="/resources/images/default-vpc.png"  width="500">
+  <div style="display: inline-block; margin-right: 10px;">
+    <img src="/resources/images/default-vpc.png" width="300">
+  </div>
+  <div style="display: inline-block;">
+    <img src="/resources/images/vpc.png" width="300">
+  </div>
 </div>
 
----  

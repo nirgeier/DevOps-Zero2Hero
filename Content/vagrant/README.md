@@ -9,9 +9,6 @@ https://developer.hashicorp.com/vagrant/downloads
 
 
 ## How to use vagrant:
-
-## How to use Vagrant:
-
 In order to operate, Vagrant uses a configuration file called `Vagrantfile` that defines the settings for your virtual machine, such as the base box, network configurations, synced folders, and provisioning scripts (you can make your own `Vagrantfile` or take a pre-configured one from: https://portal.cloud.hashicorp.com/vagrant/discover).
 
 ### Running a Vagrantfile (using pre-configured vagarntfile)

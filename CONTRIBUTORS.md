@@ -29,36 +29,38 @@ If you appreciate the effort, Please <img src="https://raw.githubusercontent.com
 
 ---
 
+
+
 Total Contributors: 26
 
 | Author                    | Commits  | Insertions   | Deletions    | Total      |
 | ------------------------- | -------- | ------------ | ------------ | ---------- |
-| Nir Geier                 | 71       | 5904         | 599          | 6503       |
+| Nir Geier                 | 70       | 5640         | 486          | 6126       |
 | Chadadinio                | 24       | 369          | 131          | 500        |
 | yoyobesser                | 12       | 233          | 50           | 283        |
 | Daniel Rashba             | 10       | 125          | 19           | 144        |
 | Gil Niyazov               | 9        | 173          | 47           | 220        |
 | daniael12                 | 7        | 762          | 123          | 885        |
-| guy-hemo                  | 6        | 132          | 5            | 137        |
 | Liel Frank                | 6        | 625          | 81           | 706        |
+| guy-hemo                  | 6        | 132          | 5            | 137        |
 | itayshlanger              | 3        | 2127         | 107          | 2234       |
 | RanMarkovich              | 2        | 673          | 0            | 673        |
-| Nir                       | 2        | 2            | 0            | 2          |
 | Elad Sopher               | 2        | 825          | 10           | 835        |
-| Moshe Dana                | 1        | 371          | 3            | 374        |
-| eilaytal                  | 1        | 74           | 0            | 74         |
-| github-actions[bot]       | 1        | 1            | 0            | 1          |
-| Itsik                     | 1        | 15           | 0            | 15         |
-| Elad Chadad               | 1        | 0            | 1            | 1          |
-| pintop9                   | 1        | 131          | 86           | 217        |
-| RafGarn                   | 1        | 97           | 0            | 97         |
-| Roy Drucker               | 1        | 599          | 0            | 599        |
-| Matan_Kaufman             | 1        | 88           | 2            | 90         |
-| Refael Greenstein         | 1        | 55           | 0            | 55         |
+| Nir                       | 2        | 2            | 0            | 2          |
 | yuvalbenar                | 1        | 3            | 2            | 5          |
-| evgeny-nik                | 1        | 135          | 0            | 135        |
+| Matan_Kaufman             | 1        | 88           | 2            | 90         |
+| Moshe Dana                | 1        | 371          | 3            | 374        |
 | Otir                      | 1        | 18           | 9            | 27         |
 | levi ochana               | 1        | 44           | 0            | 44         |
+| pintop9                   | 1        | 131          | 86           | 217        |
+| Roy Drucker               | 1        | 599          | 0            | 599        |
+| eilaytal                  | 1        | 74           | 0            | 74         |
+| Itsik                     | 1        | 15           | 0            | 15         |
+| Refael Greenstein         | 1        | 55           | 0            | 55         |
+| github-actions[bot]       | 1        | 1            | 0            | 1          |
+| RafGarn                   | 1        | 97           | 0            | 97         |
+| Elad Chadad               | 1        | 0            | 1            | 1          |
+| evgeny-nik                | 1        | 135          | 0            | 135        |
 | ------------------------- | -------- | ------------ | ------------ | ---------- |
-| TOTAL                     | 168      | 13581        | 1275         | 14856      |
+| TOTAL                     | 167      | 13317        | 1162         | 14479      |
 | ------------------------- | -------- | ------------ | ------------ | ---------- |

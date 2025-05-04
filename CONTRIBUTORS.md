@@ -31,25 +31,24 @@ If you appreciate the effort, Please <img src="https://raw.githubusercontent.com
 
 
 
-
 Total Contributors: 28
 
 |Author                   |Commits |Insertions  |Deletions   |     Total|
 |-------------------------|--------|------------|------------|----------|
-|Nir Geier                |      73|        5980|         630|      6610|
+|Nir Geier                |      71|        5967|         617|      6584|
 |Chadadinio               |      24|         369|         131|       500|
 |yoyobesser               |      12|         233|          50|       283|
 |Daniel Rashba            |      10|         125|          19|       144|
 |Gil Niyazov              |       9|         173|          47|       220|
+|moshedana058             |       9|        1838|           2|      1840|
 |daniael12                |       7|         762|         123|       885|
-|guy-hemo                 |       6|         132|           5|       137|
 |Liel Frank               |       6|         625|          81|       706|
+|guy-hemo                 |       6|         132|           5|       137|
 |itayshlanger             |       3|        2127|         107|      2234|
-|RanMarkovich             |       2|         673|           0|       673|
 |Elad Sopher              |       2|         825|          10|       835|
 |Nir                      |       2|           2|           0|         2|
 |RafGarn                  |       2|         174|          17|       191|
-|moshedana058             |       2|         931|          15|       946|
+|RanMarkovich             |       2|         673|           0|       673|
 |github-actions[bot]      |       1|           1|           0|         1|
 |Itsik                    |       1|          15|           0|        15|
 |Elad Chadad              |       1|           0|           1|         1|
@@ -65,6 +64,5 @@ Total Contributors: 28
 |zivhm                    |       1|        1589|           0|      1589|
 |Moshe Dana               |       1|         371|           3|       374|
 |-------------------------|--------|------------|------------|----------|
-|TOTAL                    |     174|       16254|        1338|     17592|
+|TOTAL                    |     179|       17148|        1312|     18460|
 |-------------------------|--------|------------|------------|----------|
-

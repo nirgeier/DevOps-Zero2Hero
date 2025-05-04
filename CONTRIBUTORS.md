@@ -28,18 +28,41 @@ If you appreciate the effort, Please <img src="https://raw.githubusercontent.com
 </div>
 
 ---
-- [@nirgeier](https://github.com/nirgeier)
 
-- [@danirdd92](https://github.com/danirdd92)
-- [@guy-hemo](https://github.com/guy-hemo)
-- [@DanielRaphael](https://github.com/DanielRaphael1)
-- [@RanMarkovich](https://github.com/RanMarkovich)
-- [@gilenz](https://github.com/gilenz)
-- [@Lielik](https://github.com/Lielik)
-- [@daniael12](https://github.com/daniael12)
-- [@itsik-weiss](https://github.com/itsik-weiss)
-- [@yuvalbenar](https://github.com/yuvalbenar)
-- [@yoyobesser](https://github.com/yoyobesser)
-- [@Chadadinio](https://github.com/Chadadinio)
-- [@itayshlanger](https://github.com/itayshlanger)
-- [@eilaytal](https://github.com/eilaytal)
+
+
+Total Contributors: 28
+
+|Author                   |Commits |Insertions  |Deletions   |     Total|
+|-------------------------|--------|------------|------------|----------|
+|Nir Geier                |      73|        5980|         630|      6610|
+|Chadadinio               |      24|         369|         131|       500|
+|yoyobesser               |      12|         233|          50|       283|
+|Daniel Rashba            |      10|         125|          19|       144|
+|Gil Niyazov              |       9|         173|          47|       220|
+|daniael12                |       7|         762|         123|       885|
+|guy-hemo                 |       6|         132|           5|       137|
+|Liel Frank               |       6|         625|          81|       706|
+|itayshlanger             |       3|        2127|         107|      2234|
+|RanMarkovich             |       2|         673|           0|       673|
+|Elad Sopher              |       2|         825|          10|       835|
+|Nir                      |       2|           2|           0|         2|
+|RafGarn                  |       2|         174|          17|       191|
+|moshedana058             |       2|         931|          15|       946|
+|github-actions[bot]      |       1|           1|           0|         1|
+|Itsik                    |       1|          15|           0|        15|
+|Elad Chadad              |       1|           0|           1|         1|
+|Roy Drucker              |       1|         599|           0|       599|
+|pintop9                  |       1|         131|          86|       217|
+|Matan_Kaufman            |       1|          88|           2|        90|
+|eilaytal                 |       1|          74|           0|        74|
+|Refael Greenstein        |       1|          55|           0|        55|
+|yuvalbenar               |       1|           3|           2|         5|
+|evgeny-nik               |       1|         135|           0|       135|
+|Otir                     |       1|          18|           9|        27|
+|levi ochana              |       1|          44|           0|        44|
+|zivhm                    |       1|        1589|           0|      1589|
+|Moshe Dana               |       1|         371|           3|       374|
+|-------------------------|--------|------------|------------|----------|
+|TOTAL                    |     174|       16254|        1338|     17592|
+|-------------------------|--------|------------|------------|----------|

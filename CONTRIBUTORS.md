@@ -35,7 +35,7 @@ Total Contributors: 29
 
 |Author                   |Commits |Insertions  |Deletions   |     Total|
 |-------------------------|--------|------------|------------|----------|
-|Nir Geier                |      71|        5967|         617|      6584|
+|Nir Geier                |      72|        5977|         626|      6603|
 |Chadadinio               |      25|         438|         155|       593|
 |yoyobesser               |      12|         233|          50|       283|
 |Daniel Rashba            |      10|         125|          19|       144|
@@ -44,19 +44,19 @@ Total Contributors: 29
 |guy-hemo                 |       6|         132|           5|       137|
 |Liel Frank               |       6|         625|          81|       706|
 |itayshlanger             |       3|        2127|         107|      2234|
+|IdoShoshani              |       3|          67|          14|        81|
 |RanMarkovich             |       2|         673|           0|       673|
 |Elad Sopher              |       2|         825|          10|       835|
 |Nir                      |       2|           2|           0|         2|
 |RafGarn                  |       2|         174|          17|       191|
 |pintop9                  |       1|         131|          86|       217|
-|eilaytal                 |       1|          74|           0|        74|
 |github-actions[bot]      |       1|           1|           0|         1|
 |Itsik                    |       1|          15|           0|        15|
 |Elad Chadad              |       1|           0|           1|         1|
-|Moshe Dana               |       1|         371|           3|       374|
-|IdoShoshani              |       1|          66|          11|        77|
 |Roy Drucker              |       1|         599|           0|       599|
+|Moshe Dana               |       1|         371|           3|       374|
 |Matan_Kaufman            |       1|          88|           2|        90|
+|eilaytal                 |       1|          74|           0|        74|
 |Refael Greenstein        |       1|          55|           0|        55|
 |yuvalbenar               |       1|           3|           2|         5|
 |evgeny-nik               |       1|         135|           0|       135|
@@ -65,5 +65,5 @@ Total Contributors: 29
 |zivhm                    |       1|        1589|           0|      1589|
 |moshedana058             |       1|         918|           0|       918|
 |-------------------------|--------|------------|------------|----------|
-|TOTAL                    |     173|       16363|        1345|     17708|
+|TOTAL                    |     176|       16374|        1357|     17731|
 |-------------------------|--------|------------|------------|----------|

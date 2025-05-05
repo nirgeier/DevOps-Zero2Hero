@@ -1,0 +1,27 @@
+[Unit]
+Description=Gunicorn instance serving Flask Library App
+After=network.target
+
+[Service]
+User={{ flask_user }}
+Group={{ flask_group }}
+
+# cd into the folder containing app.py
+WorkingDirectory={{ flask_workdir }}/flask_app
+
+# put your venv’s bin on the PATH
+Environment="PATH={{ flask_workdir }}/venv/bin"
+
+# inject the correct Mongo URI so your app won't try localhost
+Environment="MONGO_URI={{ mongo_uri }}"
+
+# (optional) mirror your Flask port env
+Environment="FLASK_PORT={{ flask_port }}"
+
+ExecStart={{ flask_workdir }}/venv/bin/gunicorn \
+  --workers {{ gunicorn_workers }} \
+  --bind 0.0.0.0:{{ flask_port }} \
+  app:app
+
+[Install]
+WantedBy=multi-user.target

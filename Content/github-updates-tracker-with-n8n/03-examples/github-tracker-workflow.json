@@ -1,0 +1,246 @@
+{
+  "name": "github-updates-tracker-with-n8n",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 8
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -400,
+        -100
+      ],
+      "id": "0483d066-dfdf-4c2a-adea-413d57105e08",
+      "name": "Schedule Trigger",
+      "notesInFlow": true,
+      "notes": "הפעלת התהליך אחת ליום באופן קבוע"
+    },
+    {
+      "parameters": {
+        "url": "https://api.github.com/orgs/microsoft/repos?per_page=1&sort=updated",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        20,
+        -180
+      ],
+      "id": "268de745-9fea-426e-8d20-055e9e4a7b5e",
+      "name": "HTTP Request",
+      "notesInFlow": true,
+      "notes": "שולח בקשה לריפו של מייקרוסופט"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "944f72c3-1667-4158-b01b-23a1cd3ddd1e",
+              "leftValue": "={{$json.updated_at}}\n",
+              "rightValue": "={{ $now.toISOString().slice(0,10) }}\n",
+              "operator": {
+                "type": "string",
+                "operation": "contains"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        680,
+        -100
+      ],
+      "id": "d003ed8a-5ba0-4d58-b5a3-cda1906f66a2",
+      "name": "If",
+      "notesInFlow": true,
+      "notes": "בודק אם עודכנו בתאריך של היום"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "52d47403-2ee9-4d2e-b50a-687dc6a615e5",
+              "name": "=email_body",
+              "value": "={{ $items().map(i => i.json.email_body).join('\\n\\n') }}\n",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        980,
+        -200
+      ],
+      "id": "87571aaf-b9c9-48ae-a109-13fac8e14419",
+      "name": "Edit Fields",
+      "notesInFlow": true,
+      "notes": "מאחד את המלל לטקסט אחד מסוכם"
+    },
+    {
+      "parameters": {
+        "sendTo": "github.updates10@gmail.com",
+        "subject": "Repo updates",
+        "emailType": "text",
+        "message": "= הנה העדכונים החדשים שיצאו היום!",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1260,
+        -200
+      ],
+      "id": "84b72053-4bc1-43a6-b4ff-bb39bf8d0197",
+      "name": "Gmail",
+      "webhookId": "b1a95d39-09ca-4f76-a8f6-c9d525f1a4c6",
+      "notesInFlow": true,
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "g9BwqY3KqgQRpjII",
+          "name": "Gmail account 2"
+        }
+      },
+      "notes": "שולח מייל מעודכן בזמן אמת"
+    },
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.1,
+      "position": [
+        400,
+        -100
+      ],
+      "id": "2019a6de-e0d5-47e2-b705-3890d86a3f3f",
+      "name": "Merge",
+      "notesInFlow": true,
+      "notes": "Request - מאחד את שני ה "
+    },
+    {
+      "parameters": {
+        "url": "https://api.github.com/orgs/google/repos?per_page=1&sort=updated",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        20,
+        -20
+      ],
+      "id": "4e5d33dc-a941-4651-a510-04310d4bcbec",
+      "name": "HTTP Request1",
+      "notesInFlow": true,
+      "notes": "שולח בקשה לריפו של גוגל"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Gmail",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "callerPolicy": "workflowsFromSameOwner",
+    "executionTimeout": -1,
+    "errorWorkflow": "slKbUicZgJxedKFO"
+  },
+  "versionId": "a782948a-dbd5-4e59-a3c0-e6e7133e4ae6",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "6d07850ce84f20f81a80575ab5986f3f0f15da4815c7cb3fba668b6ceb182f85"
+  },
+  "id": "slKbUicZgJxedKFO",
+  "tags": []
+}

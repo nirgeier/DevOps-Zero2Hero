@@ -3,7 +3,7 @@ It controls who can access the bucket and what actions they can perform (read, w
 
 ## EXAMPLE:
 
-![bucket-policy](/resources/images/bucket-policy.png)
+![bucket-policy](../../resources/images/bucket-policy.png)
 
 
 ---

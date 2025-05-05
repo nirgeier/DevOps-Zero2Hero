@@ -25,5 +25,9 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         push: true
+<<<<<<< HEAD:Content/Dockerlabs/.github/workflows/docker-publish.yml
+        tags: gpsound/docker-lab:latest #tags: yourdockerhubusername/docker-lab:latest
+=======
         tags: yourdockerhubusername/docker-lab:latest
         
+>>>>>>> 7513691880dd79ad6a46f2fa0e8cac958cb4a3f0:Content/docker/labs/1-1-docker-compose-lab/.github/workflows/docker-publish.yml

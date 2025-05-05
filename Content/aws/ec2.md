@@ -42,7 +42,7 @@ Amazon EC2 integrates seamlessly with other AWS services, including:
 
 
 <div align="center">
-  <img src="/resources/images/ec2.png" width="500">
+  <img src="../../resources/images/ec2.png" width="500">
 </div>
 
 

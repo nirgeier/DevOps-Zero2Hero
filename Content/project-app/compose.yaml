@@ -6,7 +6,5 @@ services:
     restart: unless-stopped
     init: true
     ports:
-      - "3000:3000"  # Expose the app on port 3000 as per Dockerfile and README
+      - "3000:3000" # Expose the app on port 3000
     # env_file: ./.env  # Uncomment if .env file exists
-    # No external dependencies detected (no DB, cache, etc.)
-    # The app runs as a single service

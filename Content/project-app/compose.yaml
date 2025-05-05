@@ -1,0 +1,10 @@
+services:
+  javascript-app:
+    build:
+      context: .
+    container_name: javascript-app
+    restart: unless-stopped
+    init: true
+    ports:
+      - "3000:3000" # Expose the app on port 3000
+    # env_file: ./.env  # Uncomment if .env file exists

@@ -39,6 +39,29 @@ By default, the server runs on `http://localhost:3000`, or a port defined in you
 
 ---
 
+## Running with Docker
+
+You can run this project using Docker and Docker Compose for a consistent, containerized environment.
+
+- **Node.js version:** The Docker image uses Node.js `22.13.1-slim`.
+- **Exposed port:** The app runs on port `3000` inside the container and is mapped to port `3000` on your host.
+- **Environment variables:** No required environment variables are set by default. You may provide a `.env` file if your setup needs custom configuration (uncomment the `env_file` line in `docker-compose.yml` if needed).
+
+### Build and Run
+
+From the project root directory, run:
+
+```
+docker compose up --build
+```
+
+This will build the Docker image and start the service as defined in `docker-compose.yml`.
+
+- Access the API at: `http://localhost:3000`
+- The container runs as a non-root user for improved security.
+
+---
+
 ## API Endpoints
 
 ### Health Check

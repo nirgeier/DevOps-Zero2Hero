@@ -31,32 +31,33 @@ If you appreciate the effort, Please <img src="https://raw.githubusercontent.com
 
 
 
-Total Contributors: 28
+Total Contributors: 29
 
 |Author                   |Commits |Insertions  |Deletions   |     Total|
 |-------------------------|--------|------------|------------|----------|
 |Nir Geier                |      71|        5967|         617|      6584|
-|Chadadinio               |      36|         417|         136|       553|
+|Chadadinio               |      25|         438|         155|       593|
 |yoyobesser               |      12|         233|          50|       283|
 |Daniel Rashba            |      10|         125|          19|       144|
 |Gil Niyazov              |       9|         173|          47|       220|
 |daniael12                |       7|         762|         123|       885|
 |guy-hemo                 |       6|         132|           5|       137|
 |Liel Frank               |       6|         625|          81|       706|
-|Elad Chadad              |       5|          24|          20|        44|
-|Nir                      |       4|          13|          14|        27|
+|Ofir Goaris              |       4|       19875|           3|     19878|
 |itayshlanger             |       3|        2127|         107|      2234|
-|RafGarn                  |       2|         174|          17|       191|
 |RanMarkovich             |       2|         673|           0|       673|
 |Elad Sopher              |       2|         825|          10|       835|
+|Nir                      |       2|           2|           0|         2|
+|RafGarn                  |       2|         174|          17|       191|
+|Roy Drucker              |       1|         599|           0|       599|
 |github-actions[bot]      |       1|           1|           0|         1|
 |Itsik                    |       1|          15|           0|        15|
-|Roy Drucker              |       1|         599|           0|       599|
+|Elad Chadad              |       1|           0|           1|         1|
 |pintop9                  |       1|         131|          86|       217|
+|Moshe Dana               |       1|         371|           3|       374|
 |Matan_Kaufman            |       1|          88|           2|        90|
 |eilaytal                 |       1|          74|           0|        74|
 |Refael Greenstein        |       1|          55|           0|        55|
-|Moshe Dana               |       1|         371|           3|       374|
 |yuvalbenar               |       1|           3|           2|         5|
 |evgeny-nik               |       1|         135|           0|       135|
 |Otir                     |       1|          18|           9|        27|
@@ -64,5 +65,5 @@ Total Contributors: 28
 |zivhm                    |       1|        1589|           0|      1589|
 |moshedana058             |       1|         918|           0|       918|
 |-------------------------|--------|------------|------------|----------|
-|TOTAL                    |     189|       16311|        1348|     17659|
+|TOTAL                    |     176|       36172|        1337|     37509|
 |-------------------------|--------|------------|------------|----------|

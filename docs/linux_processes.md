@@ -68,9 +68,6 @@ Each running process on the system is represented as a subdirectory in the `/pro
 
 [comment]: # (!!!)
 
-## Process Resources
-
-
 ![](../media/procresources.png)
 
 [comment]: # (!!!)

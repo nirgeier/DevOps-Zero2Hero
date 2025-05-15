@@ -335,18 +335,3 @@ In simple words, when your application wants to use the hardware (e.g. calculate
 It is an important tool to debug your programs in advanced cases.
 In this assignment, you should follow the `strace` output of a program in order to understand what exactly it does (i.e. what are the system calls of the program to the kernel). You can assume that the program does only what you can see by using `strace`.
 
-To run the program, open a linux terminal in an empty directory and perform:
-
-```bash
-wget https://github.com/alonitac/DevOpsBootcampUPES/raw/main/strace_ex/whatIdo
-```
-
-The `wget` command is able to retrieve data from the internet.
-
-1. Give the `whatIdo` file an exec permission (make sure you don't get Permission denied when running it).
-2. Run the program using strace: `strace ./whatIdo`.
-3. Follow strace output. Tip: many lines in the beginning are part of the load of the
-   program. The first “interesting” line comes only at the end of the output.
-
-Try to get a general idea of what this program does by observing the sys calls and the directory you've run the program.
-

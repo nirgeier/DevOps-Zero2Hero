@@ -1,3 +1,24 @@
+[comment]: # (mdslides presentation.md --include media)
+
+[comment]: # (THEME = white)
+[comment]: # (CODE_THEME = base16/zenburn)
+[comment]: # (The list of themes is at https://revealjs.com/themes/)
+[comment]: # (The list of code themes is at https://highlightjs.org/)
+
+[comment]: # (controls: true)
+[comment]: # (keyboard: true)
+[comment]: # (markdown: { smartypants: true })
+[comment]: # (hash: false)
+[comment]: # (respondToHashChanges: false)
+[comment]: # (width: 1500)
+[comment]: # (height: 1000)
+
+
+![](media/cover.png)
+
+
+DevOps-Zero2Hero NIR
+
 # Linux Processes
 
 ## Process Definition

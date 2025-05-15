@@ -1,94 +1,85 @@
-# Welcome to the Linux Tutorial
+<!-- omit in toc -->
+# DevOps-Zero2Hero
 
-This tutorial covers the fundamentals of Linux, including introduction, environment variables, file management, I/O redirection, package management, and process handling.
+- The aim of this project is  to create a startup project that can be used to learn the concepts of DevOps.
+- The project will contain DevOps Learning labs.
 
-## Table of Contents
+---
+![](resources/images/cover.png)
+---
 
-1. [Linux Introduction](#linux-introduction)
-2. [Linux Environment Variables](#linux-environment-variables)
-3. [Linux File Management](#linux-file-management)
-4. [Linux Input/Output (I/O) Redirection](#linux-inputoutput-io-redirection)
-5. [Linux Package Management](#linux-package-management)
-6. [Linux Processes](#linux-processes)
+### Table of Contents 
+
+- [](#)
+  - [Table of Contents](#table-of-contents)
+  - [How to contribute to this project?](#how-to-contribute-to-this-project)
+  - [Contribution sample](#contribution-sample)
+    - [Fork the repository](#fork-the-repository)
 
 ---
 
-## Linux Introduction
+### How to contribute to this project?
 
-To get started, check out the [Linux Introduction](docs/linux_intro.md).
+- Fork the repository.
+  - Click on the `Fork` and fork this project to your GitHub account.
+- Clone the forked repository to your local machine.
+  ```sh
+  # Clone the forked repository to your local machine
+  git clone https://github.com/<your-username>/DevOps-Zero2Hero.git
 
-Topics covered:
-- What is Linux?
-- Key components of the Linux operating system
-- Linux distributions and their differences
+  # Verify that the project is cloned successfully by checking 
+  # the files in the project directory.
+  
+  # Navigate to the project directory and verify the files.
+  cd DevOps-Zero2Hero 
+  
+  # Verify the files in the project directory.
+  git remote -v
+  ```
 
----
+- Contribute to the project.
+  - Make changes locally on your local machine (clone).
+  - create a new branch (git checkout -b your-branch-name)
+  - Commit the changes. (git add . followed by: git commit -m "Describe your changes here")
+  - Push the changes to your forked repository. (git push origin your-branch-name)
+  - Create a pull request to the main repository.
+  - Add yourself to the list of contributors.
+  - Follow the instructions in the pull request to merge your changes.
+  - Wait for the project maintainers to review and merge your pull request.
 
-## Linux Environment Variables
+### Contribution sample
 
-Understand how environment variables work in Linux. Check out the [Linux Environment Variables Guide](docs/linux_environment_variables.md).
+#### Fork the repository
 
-Topics covered:
-- What are environment variables?
-- Setting and retrieving variables
-- Persistent and temporary variables
-
----
-
-## Linux File Management
-
-Learn how to manage files and directories in Linux. Check out the [Linux File Management Guide](docs/linux_file_management.md).
-
-Topics covered:
-- Navigating the file system
-- File permissions and ownership
-- Creating, deleting, and editing files
-
----
-
-## Linux Input/Output (I/O) Redirection
-
-Learn how Linux handles input and output operations efficiently. Check out the [Linux I/O Redirection Guide](docs/linux_io_redirection.md).
-
-Topics covered:
-- Managing files and directories
-- Standard Input, Output, and Error
-- I/O redirection and piping
-
----
-
-## Linux Package Management
-
-Master the art of managing software packages in Linux. Check out the [Linux Package Management Guide](docs/linux_package_management.md).
-
-Topics covered:
-- Using package managers like `apt`, `yum`, and `dnf`
-- Installing and removing software
-- Keeping packages up-to-date
-
----
-
-## Linux Processes
-
-Understand how Linux handles processes and how to control them. Check out the [Linux Processes Guide](docs/linux_processes.md).
-
-Topics covered:
-- Viewing and monitoring processes (`ps`, `top`, `htop`)
-- Managing processes (`kill`, `nice`, `renice`)
-- Background and foreground processes
+- Click on the `Fork` and fork this project to your GitHub account.  
+  https://github.com/nirgeier/DevOps-Zero2Hero/fork
+- Clone the forked repository to your local machine.
+  ```sh
+  $ git clone git@github.com:<your-account-username>/DevOps-Zero2Hero.git
+  ```
+- Create branch for your changes.
+  ```sh
+  $ git checkout -b <your-branch-name>
+  ```
+- Make changes locally on your local machine (clone).
+- Add the changes to your staging area
+  ```sh
+  $ git add .
+  ```
+- Commit the changes
+  ```sh 
+  $ git commit -m "Describe your changes here"
+  ```
+- Push the changes to your forked repository.
+  ```sh
+  $ git push origin <your-branch-name>
+  ```
+- Create a pull request to the main repository.
 
 ---
 
-## Getting Started
+- Feel free to contribute to the project
+- Use the [discussions](https://github.com/nirgeier/DevOps-Zero2Hero/discussions) tab to discuss the project.
 
-To follow this tutorial, you will need:
-- A Linux-based operating system or a virtual machine
-- Basic knowledge of command-line interfaces (CLI)
+Thank it. AS simple as that!
 
----
-
-## Contributing
-
-We welcome contributions to improve this tutorial. Feel free to fork this repository, suggest improvements, or add new sections.
-
----

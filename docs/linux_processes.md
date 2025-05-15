@@ -31,7 +31,49 @@ The top command can show running processes in the terminal in real-time.
 myuser@hostname:~$ top
 ...
 ```
+## Processes examples
 
+- If you are viewing this text in a web browser, your browser is running as a process.
+- If you are typing some bash commands, each one of them is running as a process.
+- If you are viewing this text in a web browser, your browser is running as a process.
+
+
+[comment]: # (!!! data-auto-animate)
+
+## Linux processes
+
+The lifecycle of every process can be described by the below diagram
+
+![](media/processes.png)
+
+[comment]: # (!!!)
+
+## Process Resources
+
+Here are the components that constitute a process:
+
+<br>
+
+- **Execution Context**: Physical memory, no other process can access it.
+- **I/O Context**: Open File Descriptors, Memory Mapped Files, Filesystem Context(work dir, etc..)
+- **Environment Variables**
+- **Heritage Information**: PID, parent process, children processes
+- **Credentials**: owning user and group
+- **Resource Statistics and Limits**: CPU and RAM utilizations
+
+<br>
+
+
+Each running process on the system is represented as a subdirectory in the `/proc` directory, with the name of the directory corresponding to the process ID (PID) of the process.
+
+[comment]: # (!!!)
+
+## Process Resources
+
+
+![](media/procresources.png)
+
+[comment]: # (!!!)
 ## Processes state
 
 In linux, multiple users running multiple processes, at the same time and on the same system. The CPU manages all these processes simultaneously, according to the below state diagram:

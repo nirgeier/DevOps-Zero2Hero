@@ -130,10 +130,6 @@ In the above `ls -l /dev` command, instead of printing the output to the screen 
 So `grep` is searching and filtering on the output of the `ls` command. 
 In this example we are filtering lines containing the text `stdin` or `stdout`, we do it by the `stdin\|stdout` regular expressions.
 
-# Self-check questions
-
-[Enter the interactive self-check page](https://alonitac.github.io/DevOpsBootcampUPES/multichoice-questions/linux_io_redirection.html)
-
 # Exercises
 
 ### :pencil2: IO redirection basics

@@ -42,11 +42,6 @@ If you only set the `PATH` variable without exporting it, it will only be availa
 ```bash
 PATH=$PATH:/home/myuser/mytools
 ```
-
-# Self-check questions
-
-[Enter the interactive self-check page](https://alonitac.github.io/DevOpsBootcampUPES/multichoice-questions/linux_environment_variables.html)
-
 # Exercises
 
 ### :pencil2: Create your own Linux "command"

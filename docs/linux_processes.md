@@ -244,10 +244,6 @@ alsa-restore.service                             loaded active exited  Save/Rest
 
 In the above output, UNIT represents the unit name, LOAD indicates that the unit's configuration has been read by systemd, ACTIVE is the state of the unit.
 
-# Self-check questions
-
-[Enter the interactive self-check page](https://alonitac.github.io/DevOpsBootcampUPES/multichoice-questions/linux_processes.html)
-
 # Exercises
 
 ### :pencil2: Resource Lock and Process State

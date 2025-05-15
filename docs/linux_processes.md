@@ -14,7 +14,7 @@
 [comment]: # (height: 1000)
 
 
-![](media/cover.png)
+![](...media/cover.png)
 
 
 DevOps-Zero2Hero NIR

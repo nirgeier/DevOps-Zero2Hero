@@ -1,7 +1,36 @@
-# Linux
+# Linux Operating System Introduction
+
+![](../media/linuxlogo.png)
+
+## What is an Operating System (OS)?
+
+- An OS is a software program that manages hardware and software resources in a computer system.
+- Responsible for allocating resources, scheduling tasks, managing memory, and handling input/output operations.
+- Ensure that the system runs in a **safe**, **efficient** and **abstract** way.
+
+
+[comment]: # (|||)
+
+## Safe
+
+An OS ensures safe access to a disk by allowing only one application program to write data to a given file at any one time
+on your keyboard or swipe down.
+
+[comment]: # (|||)
+
+## Efficient
+
+An OS encourages efficient use of the CPU by suspending programs that are waiting for I/O operations to complete to make way for programs that can use the CPU more productively
+
+[comment]: # (|||)
+
+## Abstract
+
+An OS provides convenient abstractions which isolate application programmers and users from the details of the underlying hardware
+
+[comment]: # (!!!)
 
 ## Intro
-
 Linux is a free and open-source operating system based on the Unix operating system. 
 It was created in 1991 by Linus Torvalds and has since become one of the most widely used operating systems in the world. 
 
@@ -10,7 +39,151 @@ In recent years, Linux has gained popularity among desktop users as well, due to
 
 Learning Linux is a very valuable skill for DevOps engineers, as it provides a deep understanding of the operation system upon which many modern applications and services are operating.
 In this course we will cover two main core components of every Linux system: files and processes, as well as a lot of small topics such as io redirect, package management, environment variables and useful commands.
+## History of UNIX
 
+In order to understand the popularity of Linux, we need to travel back in time, about 50 years ago...
+
+Imagine computers as big as houses, while every computer had a different way of operation.
+
+![](../media/computer.jpg)
+
+[comment]: # (!!!)
+### History of UNIX
+
+- Software for one given system didn't run on another system
+- Software communicates directly with the hardware
+- You can run only one software on a piece of hardware
+
+<br><br>
+In 1969, a team of developers in the Bell Labs laboratories started working on a solution for the software
+problem, to address these issues.
+
+
+[comment]: # (!!!)
+
+The Bell Labs developers named their project "**UNIX**."
+
+
+[comment]: # (!!!)
+
+### The UNIX Kernel
+
+Until UNIX time, all commercially available computer systems were written in a code specifically developed for one system.
+
+<br>
+
+- UNIX, on the other hand, needed only a small piece of that special code, which is now commonly named the **kernel**.
+- This kernel is the only piece of code that needs to be adapted for every specific system and forms the base of the UNIX system.
+- The operating system and all other functions were built around this kernel and written in a higher programming language, C.
+
+![](../media/kernel.png)
+
+[comment]: # (!!!)
+
+
+By the beginning of the 90s home PCs were finally powerful enough to run a full blown UNIX.
+
+
+[comment]: # (!!!)
+
+### Linus Torvalds
+
+
+**Linus Torvalds**, a young man studying computer science at the university of Helsinki, thought it would be a good idea to have some sort of freely available academic version of UNIX, and promptly started to code
+
+
+![](../media/trovalds.png)
+
+[comment]: # (!!! data-auto-animate)
+
+### Linux Today
+
+
+Two years after Linus' post, there were 12000 Linux users… but this was just the beginning
+
+- **Open**-source: its source code is available for anyone to view, modify, and distribute.
+- **Security**: Linux has a reputation for being more secure than other operating systems.
+- **Stability**: Linux is known for its stability and reliability, making it an ideal choice for servers and mission-critical systems that require constant uptime.
+- **Flexibility**: Linux is highly customizable and can be configured to meet the specific needs of different users and applications.
+- **Scalability**: Linux can scale from embedded devices to supercomputers, making it a versatile choice for a wide range of applications.
+- **Cloud compatibility**: Linux is widely used in cloud computing due to its flexibility, security, and scalability, making it an ideal choice for virtualization and containerization.
+- **Large community and support**
+
+[comment]: # (!!!)
+
+### Architecture of the Linux
+
+- **Kernel**: The Linux kernel includes device driver support for a large number of PC hardware devices (graphics cards, network cards, hard disks etc.), advanced processor and memory management features, and support for many different types of filesystems
+- **Shells and GUIs**: Linux supports two forms of command input: through textual command line shells similar to those found on most UNIX systems (e.g. sh, bash) and through graphical interfaces (GUIs)
+- **System Utilities**: System utilities are designed to be powerful tools that do a single simple task extremely well (e.g. creating a directory, search text in a file). Users can often solve problems by interconnecting these tools instead of writing a large monolithic application program.
+- **Application programs**: Linux distributions typically come with several useful application programs as standard. Examples include the text editor, image viewer, C compiler etc...
+
+[comment]: # (!!!)
+
+### Architecture of the Linux
+
+![](media/linuxlayers.png)
+
+[comment]: # (!!!)
+
+### Linux Distributions
+
+A Linux distribution, or "distro," is a version of the Linux operating system (the Linux kernel) that is packaged with a specific set of software and configurations.
+
+<br>
+
+- Different Linux distributions are optimized for different use cases, such as desktop, server, or embedded systems, and come with different software packages and tools.
+- Some popular Linux distributions include Ubuntu, Debian, CentOS, Fedora, and Arch Linux.
+- Full list can be found <a href="https://en.wikipedia.org/wiki/List_of_Linux_distributions">here</a>
+
+
+![](media/ubuntu.png)
+
+[comment]: # (!!!)
+
+# Linux File System
+
+- Understand block storage layout in higher level
+- Introducing inodes
+- Important Linux directories
+
+[comment]: # (!!!)
+
+### Block Storage Layout
+
+The standard linux file systems organize storage on hard disk drives. Disks are usually accessed in physical blocks, rather than a byte (8 bits) at a time. Block sizes may range from 512 bytes to 4K or larger.
+
+A file is represented by an **inode**, a kind of serial number containing information about the actual data that makes up the file: to whom this file belongs, and where is it located on the hard disk.
+
+[comment]: # (!!!)
+
+## Block Storage Layout
+
+![](media/inode2.png)
+
+![](media/inode1.png)
+
+[comment]: # (!!!)
+
+"On a UNIX system, everything is a **file**; if something is not a file, it is a **process**."
+
+
+[comment]: # (!!!)
+
+## Important directories
+
+
+| Directory      | Meaning |
+| -----------   | ----------- |
+| `/bin`        | Common programs, shared by the system, the system administrator and the users.       |
+| `/dev`        | Contains references to all the CPU peripheral hardware, which are represented as files with special properties.       |
+| `/etc`        | Most important system configuration files are in `/etc`, this directory contains data similar to those in the Control Panel in Windows      |
+| `/home`       | Home directories of the common users.        |
+| `/proc`       | A virtual file system containing information about system resources.        |
+| `/tmp`        | Temporary space for use by the system, cleaned upon reboot.      |
+| `/var`        | Storage for all variable files and temporary files created by users, such as log files, space for temporary storage of files downloaded from the Internet.      |
+
+[comment]: # (!!!)
 ## Course resources
 
 The below list is the resources upon which this course was built. From time to time we will attach references for further reading.

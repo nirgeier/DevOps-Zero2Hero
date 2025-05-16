@@ -14,7 +14,7 @@
 [comment]: # (height: 1000)
 
 
-![](../media/cover.png)
+![](../resources/images/cover.png)
 
 
 DevOps-Zero2Hero NIR
@@ -44,7 +44,7 @@ myuser@hostname:~$ top
 
 The lifecycle of every process can be described by the below diagram
 
-![](../media/processes.png)
+![](../resources/images/processes.png)
 
 [comment]: # (!!!)
 
@@ -68,14 +68,14 @@ Each running process on the system is represented as a subdirectory in the `/pro
 
 [comment]: # (!!!)
 
-![](../media/procresources.png)
+![](../resources/images/procresources.png)
 
 [comment]: # (!!!)
 ## Processes state
 
 In linux, multiple users running multiple processes, at the same time and on the same system. The CPU manages all these processes simultaneously, according to the below state diagram:
 
-![](../media/process_state.png)
+![](../resources/images/process_state.png)
 
 A process can be in one of several states at any given time, indicating its current status or activity. These states are important to understand for managing and troubleshooting system performance.
 

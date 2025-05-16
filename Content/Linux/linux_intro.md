@@ -1,6 +1,6 @@
 # Linux Operating System Introduction
 
-![](../media/linuxlogo.png)
+![](../resources/images/linuxlogo.png)
 
 ## What is an Operating System (OS)?
 
@@ -45,7 +45,7 @@ In order to understand the popularity of Linux, we need to travel back in time, 
 
 Imagine computers as big as houses, while every computer had a different way of operation.
 
-![](../media/computer.jpg)
+![](../resources/images/computer.jpg)
 
 [comment]: # (!!!)
 ### History of UNIX
@@ -76,7 +76,7 @@ Until UNIX time, all commercially available computer systems were written in a c
 - This kernel is the only piece of code that needs to be adapted for every specific system and forms the base of the UNIX system.
 - The operating system and all other functions were built around this kernel and written in a higher programming language, C.
 
-![](../media/kernel.png)
+![](../resources/images/kernel.png)
 
 [comment]: # (!!!)
 
@@ -92,7 +92,7 @@ By the beginning of the 90s home PCs were finally powerful enough to run a full 
 **Linus Torvalds**, a young man studying computer science at the university of Helsinki, thought it would be a good idea to have some sort of freely available academic version of UNIX, and promptly started to code
 
 
-![](../media/trovalds.png)
+![](../resources/images/trovalds.png)
 
 [comment]: # (!!! data-auto-animate)
 
@@ -122,7 +122,7 @@ Two years after Linus' post, there were 12000 Linux users… but this was just t
 
 ### Architecture of the Linux
 
-![](media/linuxlayers.png)
+![](../resources/images/linuxlayers.png)
 
 [comment]: # (!!!)
 
@@ -137,7 +137,7 @@ A Linux distribution, or "distro," is a version of the Linux operating system (t
 - Full list can be found <a href="https://en.wikipedia.org/wiki/List_of_Linux_distributions">here</a>
 
 
-![](media/ubuntu.png)
+![](../resources/images/ubuntu.png)
 
 [comment]: # (!!!)
 
@@ -159,9 +159,9 @@ A file is represented by an **inode**, a kind of serial number containing inform
 
 ## Block Storage Layout
 
-![](media/inode2.png)
+![](../resources/images/inode2.png)
 
-![](media/inode1.png)
+![](../resources/images/inode1.png)
 
 [comment]: # (!!!)
 
@@ -494,7 +494,7 @@ Change to `/etc`.
 
 The Linux Kernel was presented in our first linux lecture - the main component of a Linux OS which functions as the core interface between a computer's hardware and its applications.
 
-![](../.img/linuxkernel.png)
+![](../resources/images/linuxkernel.png)
 
 Then we moved to learn how to use the Terminal and communicate with the OS using commands such as `ls` or `chmod`.  
 But how does it really work? We type a command and hit the Enter key, then what happens? This question tries to investigate this point.

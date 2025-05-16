@@ -1,0 +1,10 @@
+<svg style="background-color: #FFF;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .a {
+        fill: #00188f;
+      }
+    </style>
+  </defs>
+  <path class="a" d="M8,78.11,210.83,50.27v196H8M235.26,46.41,504,7.15V244.64H235.26M8,267H210.83V463.6L8,435.2M235.26,269.64H504V504.85L235.26,466.79" />
+</svg>

@@ -1,0 +1,82 @@
+<svg style="background-color: #FFF;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .a,
+      .f {
+        fill: #932279;
+      }
+
+      .a,
+      .b,
+      .c,
+      .d {
+        fill-rule: evenodd;
+      }
+
+      .b,
+      .g {
+        fill: #efa724;
+      }
+
+      .c,
+      .h {
+        fill: #262577;
+      }
+
+      .d,
+      .e {
+        fill: #9ccd2a;
+      }
+
+      .e,
+      .f,
+      .g,
+      .h,
+      .i,
+      .j,
+      .k {
+        stroke: #fff;
+      }
+
+      .e,
+      .f,
+      .g,
+      .h,
+      .k {
+        stroke-miterlimit: 4.25;
+        stroke-width: 3.77px;
+      }
+
+      .i,
+      .j,
+      .k {
+        fill: none;
+      }
+
+      .i,
+      .j {
+        stroke-miterlimit: 4.25;
+      }
+
+      .i {
+        stroke-width: 3.77px;
+      }
+
+      .j {
+        stroke-width: 3.77px;
+      }
+    </style>
+  </defs>
+  <path class="a" d="M216,237.47l18.36,18.25L216,274H86.8v60.81L8,255.72,86.8,178v59.48Z" />
+  <path class="b" d="M274.53,216l-18.25,18.36L238,216V86.8H177.22L256.28,8,334,86.8H274.53Z" />
+  <path class="c" d="M296,274.53l-18.36-18.25L296,238H425.2V177.21L504,256.28,425.2,334V274.53Z" />
+  <path class="d" d="M237.47,296l18.25-18.36L274,296V425.2h60.81L255.72,504,178,425.2h59.48Z" />
+  <path class="e" d="M82.17,82.17h157v157h-157Z" />
+  <path class="f" d="M272.82,82.17h157v157h-157Z" />
+  <path class="g" d="M272.82,272.82h157v157h-157Z" />
+  <path class="h" d="M82.17,272.82h157v157h-157Z" />
+  <path class="i" d="M10.17,256l111-111,111,111-111,111Z" />
+  <path class="j" d="M145,121.19l111-111,111,111-111,111Z" />
+  <path class="k" d="M279.79,256l111-111,111,111-111,111Z" />
+  <path class="i" d="M145,390.81l111-111,111,111-111,111Z" />
+</svg>

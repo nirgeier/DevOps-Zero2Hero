@@ -1,0 +1,39 @@
+name: Auto-update Contributors
+
+on:
+  push:
+    branches:
+      - "*"
+
+env:
+  GIT_USER_EMAIL: "nirgeier@gmail.com"
+  GIT_USER_NAME: "Nir Geier"
+
+jobs:
+  update-contributors:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+          token: "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Set script permissions
+        run: chmod +x resources/scripts/update-contributers.sh
+
+      - name: Update CONTRIBUTORS.md
+        run: |
+          cat ./templates/Contributers.md <(./resources/scripts/update-contributers.sh)  > ./CONTRIBUTORS.md
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "${GIT_USER_EMAIL}"
+          git config --local user.name "${GIT_USER_NAME}"
+          git add CONTRIBUTORS.md
+          git diff --cached --quiet || git commit -m "Update CONTRIBUTORS.md automatically via GitHub Action"
+          git push

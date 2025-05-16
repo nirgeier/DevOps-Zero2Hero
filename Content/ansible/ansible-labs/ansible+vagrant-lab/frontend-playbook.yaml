@@ -1,0 +1,132 @@
+# frontend-playbook.yaml
+---
+- name: Deploy Flask Book-Library frontend
+  hosts: frontend
+  become: yes
+
+  vars:
+    flask_user:       test
+    flask_group:      testadmin
+    flask_workdir:    /opt/webfiles/app
+    flask_port:       5000
+    gunicorn_workers: 3
+    backend_ip:       "{{ hostvars[groups['backend'][0]].ansible_host | default(groups['backend'][0]) }}"
+    mongo_uri:        "mongodb://{{ backend_ip }}:27017/projectdb"
+
+  tasks:
+    - name: Install system packages
+      apt:
+        name:
+          - python3
+          - python3-venv
+          - python3-pip
+          - unzip
+        state: present
+        update_cache: yes
+
+    - name: Ensure group {{ flask_group }} exists
+      group:
+        name: "{{ flask_group }}"
+        state: present
+
+    - name: Ensure user {{ flask_user }} exists
+      user:
+        name: "{{ flask_user }}"
+        group: "{{ flask_group }}"
+        shell: /bin/bash
+        state: present
+
+    - name: Create application directory
+      file:
+        path: "{{ flask_workdir }}"
+        state: directory
+        owner: "{{ flask_user }}"
+        group: "{{ flask_group }}"
+        mode: '0755'
+
+    - name: Copy Flask package code
+      copy:
+        src: flask_app/
+        dest: "{{ flask_workdir }}/flask_app/"
+        owner: "{{ flask_user }}"
+        group: "{{ flask_group }}"
+        mode: '0755'
+
+    - name: Create virtualenv
+      command: python3 -m venv {{ flask_workdir }}/venv
+      args:
+        creates: "{{ flask_workdir }}/venv/bin/activate"
+
+    - name: Install Python dependencies
+      pip:
+        requirements: "{{ flask_workdir }}/flask_app/requirements.txt"
+        virtualenv: "{{ flask_workdir }}/venv"
+
+    - name: Deploy flaskapp.service
+      template:
+        src: flask_app/templates/flaskapp.service.j2
+        dest: /etc/systemd/system/flaskapp.service
+        mode: 0644
+        force: yes
+      notify: Reload systemd & restart Flaskapp
+      tags:
+        - deploy_template
+
+    - name: Enable and start flaskapp
+      systemd:
+        daemon_reload: yes
+        name: flaskapp
+        state: started
+        enabled: yes
+
+    - meta: flush_handlers
+
+    - name: Wait for Flask port {{ flask_port }} to answer
+      wait_for:
+        host: 127.0.0.1
+        port: "{{ flask_port }}"
+        delay: 2
+        timeout: 30
+      tags:
+        - smoketest
+
+    - name: API smoketest – list books
+      uri:
+        url: "http://127.0.0.1:{{ flask_port }}/api/v1/books"
+        return_content: yes
+        status_code: 200
+      register: api
+      until: api.json is defined and api.json is iterable
+      retries: 5
+      delay: 3
+      tags:
+        - smoketest
+
+    - name: HTML smoketest – title string present
+      uri:
+        url: "http://127.0.0.1:{{ flask_port }}/"
+        return_content: yes
+        status_code: 200
+      register: page
+      failed_when: "'Book Library' not in page.content"
+      tags:
+        - smoketest
+
+    # ── reload + restart at the end ────────────────────────────────────────────
+    - name: Reload systemd daemon
+      become: yes
+      systemd:
+        daemon_reload: yes
+
+    - name: Restart Flaskapp service
+      become: yes
+      service:
+        name: flaskapp
+        state: restarted
+
+  handlers:
+    - name: Reload systemd & restart Flaskapp
+      systemd:
+        daemon_reload: yes
+        name: flaskapp
+        state: restarted

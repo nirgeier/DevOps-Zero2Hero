@@ -26,7 +26,7 @@ Topics covered:
 
 ## Linux Environment Variables
 
-Understand how environment variables work in Linux. Check out the [Linux Environment Variables Guide](docs/linux_environment_variables.md).
+Understand how environment variables work in Linux. Check out the [Linux Environment Variables Guide](linux_environment_variables.md).
 
 Topics covered:
 - What are environment variables?
@@ -37,7 +37,7 @@ Topics covered:
 
 ## Linux File Management
 
-Learn how to manage files and directories in Linux. Check out the [Linux File Management Guide](docs/linux_file_management.md).
+Learn how to manage files and directories in Linux. Check out the [Linux File Management Guide](linux_file_management.md).
 
 Topics covered:
 - Navigating the file system
@@ -48,7 +48,7 @@ Topics covered:
 
 ## Linux Input/Output (I/O) Redirection
 
-Learn how Linux handles input and output operations efficiently. Check out the [Linux I/O Redirection Guide](docs/linux_io_redirection.md).
+Learn how Linux handles input and output operations efficiently. Check out the [Linux I/O Redirection Guide](linux_io_redirection.md).
 
 Topics covered:
 - Managing files and directories
@@ -59,7 +59,7 @@ Topics covered:
 
 ## Linux Package Management
 
-Master the art of managing software packages in Linux. Check out the [Linux Package Management Guide](docs/linux_package_management.md).
+Master the art of managing software packages in Linux. Check out the [Linux Package Management Guide](linux_package_management.md).
 
 Topics covered:
 - Using package managers like `apt`, `yum`, and `dnf`
@@ -70,7 +70,7 @@ Topics covered:
 
 ## Linux Processes
 
-Understand how Linux handles processes and how to control them. Check out the [Linux Processes Guide](docs/linux_processes.md).
+Understand how Linux handles processes and how to control them. Check out the [Linux Processes Guide](linux_processes.md).
 
 Topics covered:
 - Viewing and monitoring processes (`ps`, `top`, `htop`)

@@ -15,7 +15,7 @@ This tutorial covers the fundamentals of Linux, including introduction, environm
 
 ## Linux Introduction
 
-To get started, check out the [Linux Introduction](docs/linux_intro.md).
+To get started, check out the [Linux Introduction](linux_intro.md).
 
 Topics covered:
 - What is Linux?

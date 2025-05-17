@@ -30,7 +30,6 @@ If you appreciate the effort, Please <img src="https://raw.githubusercontent.com
 ---
 
 
-
 Total Contributors: 33
 
 |Author                   |Commits |Insertions  |Deletions   |     Total|
@@ -71,3 +70,4 @@ Total Contributors: 33
 |-------------------------|--------|------------|------------|----------|
 |TOTAL                    |     180|       38661|       21192|     59853|
 |-------------------------|--------|------------|------------|----------|
+

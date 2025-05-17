@@ -110,7 +110,7 @@ Allows you to create personal copies of other peoples repos. We call those copie
 3. GitHUb will create a copy of the repository under your GitHub account.
 4. Clone your forked repository to your local machine.
 `git clone URL-of-your-forked-repo`
-5. If you want ypur forked repository to be in synce with the original repository, you can set upstream remote.
+5. If you want your forked repository to be in sync with the original repository, you can set upstream remote.
 `git remote add upstream URL-of-the-original-repo`
 6. It's best to create a new branch for the the changes that you want to make.
 `git switch -c branch-name`

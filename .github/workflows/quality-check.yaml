@@ -1,0 +1,82 @@
+name: Quality Check
+
+on:
+  push:
+    paths:
+      - '**/*.yml'
+      - '**/*.yaml'
+      - '**/Dockerfile'
+  pull_request:
+    paths:
+      - '**/*.yml'
+      - '**/*.yaml'
+      - '**/Dockerfile'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint only changed files
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # needed for full git history in PRs
+
+      - name: Detect changed files
+        id: changes
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            git fetch origin ${{ github.base_ref }}
+            FILES=$(git diff --name-only origin/${{ github.base_ref }}...HEAD)
+          else
+            FILES=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})
+          fi
+
+          echo "$FILES" > changed.txt
+          echo "Changed files:"
+          echo "$FILES"
+
+      #––– Hadolint ––––––––––––––––––––––––––––––––––––––––––––
+      - name: Lint Dockerfiles
+        run: |
+          FILES=$(cat changed.txt | grep -E 'Dockerfile$' || true)
+          if [ -n "$FILES" ]; then
+            echo "Running hadolint on:"
+            echo "$FILES"
+            wget -qO /bin/hadolint https://github.com/hadolint/hadolint/releases/latest/download/hadolint-Linux-x86_64
+            chmod +x /bin/hadolint
+            echo "$FILES" | xargs -n1 hadolint
+          else
+            echo "No Dockerfiles changed."
+          fi
+
+      #––– Yamllint ––––––––––––––––––––––––––––––––––––––––––––
+      - name: Lint YAML files
+        run: |
+          sudo pip install yamllint
+          FILES=$(cat changed.txt | grep -E '\.ya?ml$' || true)
+          if [ -n "$FILES" ]; then
+            echo "Running yamllint on:"
+            echo "$FILES"
+            yamllint -c .yamllint.yml $FILES
+
+          else
+            echo "No YAML files changed."
+          fi
+
+      #––– Actionlint ––––––––––––––––––––––––––––––––––––––––––
+      - name: Lint GitHub Workflows with Actionlint
+        run: |
+          curl -sSL https://github.com/rhysd/actionlint/releases/download/v1.6.26/actionlint_1.6.26_linux_amd64.tar.gz | tar xz
+          chmod +x actionlint
+          ./actionlint -shellcheck=

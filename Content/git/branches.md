@@ -54,7 +54,7 @@ We merge branches, not specific commits. And we always merge to the current head
 
 Shows changes between commits, branches, files, the working directory and more.
     
-  - `git dif` - Lists all of the changes in our working directory that are **not staged** for the next commit.
+  - `git diff` - Lists all of the changes in our working directory that are **not staged** for the next commit.
   - `git diff HEAD`   - Lists **all changes** (staged and unstaged) in the working tree since your last commit. Can do the same but with a file: `git diff HEAD filename` .
   - `git diff --staged` or `--chached` - Lists the changes between the staging area and our last commit. “show me what will be included in me commit if i run git commit now” . Can do the same but with a file: `git diff --staged filename`  or `--chached filename` .
   - `git diff branch1..branch2` or `git diff branch1 branch2`- List the changes between the tips of two branches.

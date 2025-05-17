@@ -1,9 +1,11 @@
 name: Auto-update Contributors
 
 on:
-  push:
+  pull_request:
     branches:
-      - "*"
+      - main
+    types:
+      - closed
 
 env:
   GIT_USER_EMAIL: "nirgeier@gmail.com"
@@ -11,6 +13,7 @@ env:
 
 jobs:
   update-contributors:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
     permissions:

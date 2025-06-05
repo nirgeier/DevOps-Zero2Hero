@@ -147,7 +147,39 @@ docker logs <container_name_or_id>
 
 ---
 
-## 8. Docker Command Cheat Sheet
+## 8. docker inspect
+
+- `docker inspect`: show the container's metadata, including the IP address, port mappings, environment variables, and more.
+
+  ### Example:
+  ```bash 
+  docker inspect <container_name_or_id> 
+  ```
+
+#### Common Options:
+- `-f`: Format output using a custom template.
+- `-s`: Display total file sizes if the type is container.
+- `--type`: Only inspect objects of the given type.
+
+
+---
+
+## 9. docker network create 
+
+- `docker network create`: Create new network.
+
+  ### Example:
+  ```bash 
+  docker network create [OPTIONS] <network name> 
+  ```
+
+  This creates a new network.
+
+
+
+---
+
+## 10. Docker Command Cheat Sheet
 
 | Command                     | Description                                                  |
 |-----------------------------|--------------------------------------------------------------|
@@ -160,6 +192,8 @@ docker logs <container_name_or_id>
 | `docker rmi <image>`         | Remove a Docker image                                        |
 | `docker exec -it <container>`| Run a command inside a running container (interactive mode) |
 | `docker logs <container>`    | View logs for a container                                    |
+| `docker inspect <container>`    | View container's metadata container                                    |
+| `docker network create <name for network>`    | Create new network                                    |
 
 > 💡 **Tip**: Keep this cheat sheet handy when working with Docker to speed up your workflow!
 

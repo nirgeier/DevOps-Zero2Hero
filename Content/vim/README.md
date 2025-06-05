@@ -75,6 +75,11 @@ brew install vim
 - `$` - End of line
 - `gg` - Start of file
 - `G` - End of file
+- `e` - Moves cursor forwards per word end
+
+**Tip:** You can add a number before a navigation command to move the cursor by that number of steps.  
+For example, `5j` moves down 5 lines, and `3k` moves up 3 lines.
+
 
 ### Editing
 - `i` - Insert before cursor
@@ -85,6 +90,8 @@ brew install vim
 - `yy` - Copy line
 - `p` - Paste after cursor
 - `P` - Paste before cursor
+- `u` - Undo
+- `d` - Delete visual selection
 
 ### Saving and Quitting
 - `:w` - Save

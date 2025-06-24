@@ -1,0 +1,14 @@
+{
+  "name": "my-node-app",
+  "version": "1.0.0",
+  "description": "Node.js app for monitoring demo",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "DevOps Team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

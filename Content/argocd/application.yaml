@@ -1,0 +1,19 @@
+# Example of application.yaml that creates application 
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: <application name>
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: <github url> # Git repo containing the manifests or Helm chart
+    path: < directory inside the Git repository where the Helm chart is located>
+    targetRevision: main   
+  syncPolicy:
+    automated:
+      prune: true # Automatically delete resources that are no longer defined in Git
+      selfHeal: true # Automatically fix resources that drift from the Git definition
+  destination:
+    server: "https://kubernetes.default.svc" # Target Kubernetes cluster
+    namespace: default  # Namespace where the application will be deployed

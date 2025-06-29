@@ -145,7 +145,7 @@
    ```sh
    # Execute the Github Actions locally
    act --workflows \
-   ".github/workflows/add-contrib.yml" --job "add-contributor" 
+   ".github/workflows/Add-contributor.yaml" --job "add-contributor" 
 - TODO: Add detailed page on how to run and text GitHub actions locally
 - Verify that your code is passing all the pre-merge checks
 

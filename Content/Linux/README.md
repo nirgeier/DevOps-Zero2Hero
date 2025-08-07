@@ -79,6 +79,21 @@ Topics covered:
 
 ---
 
+## Linux System Administration
+
+Learn how to manage administrative tasks on Linux systems. Check out the [Linux System Administration Guide](linux_system_administration.md).
+
+Topics covered:
+
+- Managing users and groups** – Learn how to create, modify, and delete users and groups, and how to manage their permissions on the system.
+- Configuring sudo for safe administrative access** – Configure `sudo` to grant elevated privileges without exposing the root account. Learn how to safely edit the `/etc/sudoers` file and set up specific permissions.
+- Setting up automation with sudoers** – Automate tasks like Ansible playbooks by editing the `sudoers` file to grant required permissions without needing a password.
+- System security practices** – Understand best practices for securing your system, such as configuring firewalls, applying patches, and minimizing root access.
+- Basic troubleshooting techniques** – Common tools and methods for diagnosing and fixing issues on Linux systems.
+
+
+---
+
 ## Getting Started
 
 To follow this tutorial, you will need:

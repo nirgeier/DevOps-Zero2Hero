@@ -138,7 +138,9 @@ Now convert this number to 10-bases number:
 
 Now simply add up the values for each permission that is granted, and use that as the digit in the corresponding position. For example:
 
-`rwxrw-rw-` would be represented as 766 in octal notation. 7 for `rwx` of the user, 6 for `rw-` of the group, 6 again of `rw-` for others.
+`rwxrw-rw-` would be represented as 766 in octal notation. 7 for `rwx` of the user, 6 for `rw-` of the group, 6 again of `rw-` for others.  
+
+For your convince, you can also use this website: https://chmod-calculator.com/
 
 #### Default permissions
 

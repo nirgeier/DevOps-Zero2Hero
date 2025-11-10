@@ -3,7 +3,7 @@
 ## Overview
 So you wanna know how to use Gitlab CI
 
-Baisicly you write code in bash that is gonna be running whenever you commit/merge or some other rules
+Basically you write code in bash that is gonna be running whenever you commit/merge or some other rules
 
 Gitlab CI seperate your code to different Jobs, for each you can choose diferent rules to run, which runner tag to run on etc...
  
@@ -11,8 +11,7 @@ Gitlab CI seperate your code to different Jobs, for each you can choose diferent
 
 whenever you commit a code Gitlab choose the right runner and it tells the runner run the code
 
-example:
-
+Example:
 
 ```yaml
 # .gitlab-ci.yml

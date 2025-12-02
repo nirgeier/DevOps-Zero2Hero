@@ -10,16 +10,6 @@
 
 ---
 
-## Related Labs
-
-> [!TIP]
-> **Practice what you learn!**
-> Check out the [Ansible + Vagrant Lab](ansible-labs/ansible+vagrant-lab/README.md) to see real-world playbooks in action.
-> *   **Master Playbook**: [master-playbook.yaml](ansible-labs/ansible+vagrant-lab/master-playbook.yaml) orchestrates the entire deployment.
-> *   **Backend Playbook**: [backend-playbook.yaml](ansible-labs/ansible+vagrant-lab/backend-playbook.yaml) configures MongoDB.
-
----
-
 Playbooks are the files where Ansible code is written. Playbooks are written in YAML format. They allow you to declare configurations, orchestrate steps of any manually ordered process, even on different sets of machines, in a defined order, and launch tasks synchronously or asynchronously.
 
 ## YAML Syntax
@@ -91,3 +81,13 @@ You can also limit execution to a specific host:
 ```bash
 ansible-playbook my_playbook.yaml --limit web1
 ```
+
+---
+
+## Related Labs
+
+> [!TIP]
+> **Practice what you learn!**
+> Check out the [Ansible + Vagrant Lab](ansible-labs/ansible+vagrant-lab/README.md) to see real-world playbooks in action.
+> *   **Master Playbook**: [master-playbook.yaml](ansible-labs/ansible+vagrant-lab/master-playbook.yaml) orchestrates the entire deployment.
+> *   **Backend Playbook**: [backend-playbook.yaml](ansible-labs/ansible+vagrant-lab/backend-playbook.yaml) configures MongoDB.

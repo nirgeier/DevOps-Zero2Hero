@@ -71,7 +71,7 @@ This ensures the task reports "ok" (green) instead of "changed" (yellow), keepin
 
 ## Blocks, Rescue, and Always
 
-Blocks allow you to group tasks together and apply error handling logic, similar to `try/catch/finally` in programming languages.
+Blocks allow you to group tasks together and apply error-handling logic, similar to `try/catch/finally` in programming languages.
 
 ### Block Structure
 

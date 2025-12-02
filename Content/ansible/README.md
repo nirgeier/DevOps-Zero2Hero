@@ -15,3 +15,4 @@ We’ll walk through a hands-on practice session to understand how Ansible works
 - [Conditionals and Loops](./06-conditionals-loops.md)
 - [Templates](./07-templates.md)
 - [Roles](./08-roles.md)
+- [Error Handling](./09-error-handling.md)

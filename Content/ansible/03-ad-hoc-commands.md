@@ -9,8 +9,6 @@
   - [Package Management (apt/yum)](#package-management-aptyum)
   - [Service Management](#service-management)
 
-
-
 ## What are Ad-Hoc Commands?
 
 Ad-hoc commands are quick, one-off tasks that you run without writing a playbook. They are useful for quick tests, checking system status, or performing simple operations across your inventory.

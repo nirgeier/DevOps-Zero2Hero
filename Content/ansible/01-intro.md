@@ -1,7 +1,7 @@
 <!-- omit in toc -->
 # Introduction to Ansible
 
-- Introduction to Ansible
+- [What is Ansible?](#what-is-ansible)
 - Core Concepts
 - Architecture
 - Installation

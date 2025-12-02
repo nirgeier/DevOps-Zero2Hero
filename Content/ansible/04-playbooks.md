@@ -11,6 +11,8 @@
 
 ## What is a Playbook?
 
+Playbooks are the files where Ansible code is written. Playbooks are written in YAML format. They allow you to declare configurations, orchestrate steps of any manually ordered process, even on different sets of machines, in a defined order, and launch tasks synchronously or asynchronously.
+
 ## YAML Syntax
 
 YAML (YAML Ain't Markup Language) is a human-readable data serialization standard.

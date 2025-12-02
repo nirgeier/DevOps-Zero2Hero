@@ -33,7 +33,7 @@ port 80;
 ```
 
 You write a template:
-```
+```plaintext
 server_name {{ domain }};
 port {{ port }};
 ```
@@ -122,7 +122,7 @@ When using the `template` module, Ansible automatically searches in the appropri
 
 Filters modify variables. They are applied using the pipe `|` symbol.
 
-#### Common Filters
+### Common Filters
 
 | Filter | Description | Example |
 |--------|-------------|---------|

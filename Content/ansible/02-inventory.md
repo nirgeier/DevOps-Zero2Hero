@@ -1,6 +1,19 @@
 <!-- omit in toc -->
 # Ansible Inventory
 
+- [What is Inventory?](#what-is-inventory)
+- [Inventory Formats](#inventory-formats)
+  - [INI Format](#ini-format)
+  - [YAML Format](#yaml-format)
+- [Groups and Variables](#groups-and-variables)
+- [Default Location](#default-location)
+
+## What is Inventory?
+
+The Ansible inventory is a file (or multiple files) that contains a list of the servers or nodes you want to manage. It allows you to organize your managed nodes into groups, which makes it easier to run automation against specific sets of servers (e.g., "webservers", "dbservers").
+
+## Inventory Formats
+
 Ansible supports multiple formats for inventory, but the most common are **INI** and **YAML**.
 
 ### INI Format

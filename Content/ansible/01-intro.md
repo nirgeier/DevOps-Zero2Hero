@@ -2,9 +2,9 @@
 # Introduction to Ansible
 
 - [What is Ansible?](#what-is-ansible)
-- Core Concepts
-- Architecture
-- Installation
+- [Core Concepts](#core-concepts)
+- [Architecture](#architecture)
+- [Installation](#installation)
 
 
 
